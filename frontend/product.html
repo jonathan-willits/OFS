@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bananas, 3lb - OFS</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        .hero_area { background-color: #f2f2f2; }
+        .header_section .navbar { padding-top: 15px; padding-bottom: 15px; margin-bottom: 0; }
+        .slider_section { text-align: center; padding: 20px 0; margin-top: 0; }
+        .container { display: flex; max-width: 1200px; margin: auto; padding: 20px; align-items: flex-start; }
+        .product-image { flex: 1; text-align: center; }
+        .product-details { flex: 2; padding-left: 20px; }
+        .product-title { font-size: 24px; margin-bottom: 10px; }
+        .product-price { font-weight: bold; color: #C00; margin-bottom: 20px; }
+        img { max-width: 100%; height: auto; }
+        .add-to-cart { background-color: #228b22; color: white; padding: 10px 20px; border: none; cursor: pointer; font-size: 18px; margin-top: 20px; }
+        .product-description { margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="hero_area">
+    <header class="header_section">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand" href="index.html">
+                <span>OFS</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class=""></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav  ">
+
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login/Sign-up</a>
+                    </li>
+                    <nav id="main-nav">
+                      <a class="cart-button" href="#">
+                        <span class="bag-count">3</span>
+                        <span class="bag-icon">Bag</span>
+                        <span class="bag-label">View Bag</span>
+                      </a>
+                    </nav>
+                    <form class="form-inline ">
+                      <button class="btn nav_search-btn" type="submit">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                      </button>
+                    </form>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="slider_section">
+    <div class="slider_container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="detail-box">
+                        <h1>
+                            <a href="fruits.html" class="slider-button small-button">Fruits</a>
+                            <a href="vegetables.html" class="slider-button small-button">Vegetables</a>
+                            <a href="meat.html" class="slider-button small-button">Meat</a>
+                            <a href="beverages.html" class="slider-button small-button">Beverages</a>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+</div>
+
+<div class="container">
+    <div class="product-image">
+        <img src="images/banana.png" alt="Bananas, 3lb">
+    </div>
+    <div class="product-details">
+        <div class="product-title">Bananas, 3lb</div>
+        <div class="product-price">$2.29</div>
+        <div class="product-description">
+            <p>Organic bananas for anyone to enjoy. Perfect for a healthy breakfast.</p>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+</div>
+
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/custom.js"></script>
+
+</body>
+</html>
