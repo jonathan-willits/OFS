@@ -434,6 +434,8 @@ a:focus {
   color: #228b22;
 }
 
+/* saving section */
+
 .saving_section {
   padding-left: 45px;
   padding-right: 45px;
@@ -516,6 +518,10 @@ a:focus {
   color: #ffffff;
 }
 
+/* end of saving section */
+
+/* why section */
+
 .why_section .box {
   text-align: center;
   margin-top: 45px;
@@ -531,10 +537,14 @@ a:focus {
 .why_section .box .img-box svg {
   width: 55px;
   height: auto;
-  fill: #320b57;
+  fill: #228b22;
 }
 
-.gift_section {
+/* end of why section */
+
+/* gift section */
+
+/* .gift_section {
   padding-left: 45px;
   padding-right: 45px;
 }
@@ -612,7 +622,11 @@ a:focus {
 .gift_section .detail-box .btn-box .btn2:hover {
   background-color: transparent;
   color: #9242dd;
-}
+} */
+
+/* end of gift section */
+
+/* contact section */
 
 .contact_section {
   position: relative;
@@ -681,7 +695,7 @@ a:focus {
   -webkit-transition: all .3s;
   transition: all .3s;
   display: block;
-  color: #fff;
+  color: #ffffff;
   margin: 35px auto 0 auto;
 }
 
@@ -699,6 +713,8 @@ a:focus {
 .contact_section .map_container .map-responsive {
   height: 100%;
 }
+
+/* end of contact section */
 
 .client_section .heading_container {
   margin-bottom: 20px;
@@ -728,7 +744,8 @@ a:focus {
 
 .client_section .box .client_info .client_name h6 {
   margin-bottom: 0;
-  color: #bfc0c0;
+  /* color: #bfc0c0; */
+  color: #ffffff;
   font-weight: normal;
   font-size: 15px;
 }
@@ -764,6 +781,7 @@ a:focus {
 }
 
 /* info section */
+
 .info_section {
   position: relative;
   background-color: #2d2d2d;
@@ -837,7 +855,8 @@ a:focus {
 }
 
 .info_section p {
-  color: #cbc9c9;
+  /* color: #cbc9c9; */
+  color: #ffffff;
 }
 
 .info_section .info_link-box a {
@@ -861,7 +880,8 @@ a:focus {
 }
 
 .info_section .info_link-box a span {
-  color: #cbc9c9;
+  /* color: #cbc9c9; */
+  color: #ffffff;
 }
 
 .info_section .info_link-box a:hover span {
@@ -869,6 +889,7 @@ a:focus {
 }
 
 /* end info section */
+
 /* footer section*/
 
 oter_section {
@@ -1620,5 +1641,63 @@ body.show-sidebar-cart {
 }
 
 /* end shopping cart sidebar section */
+
+/* login page */
+
+/* body {
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+} */
+
+.container {
+    margin-top: 100px;
+}
+
+/*
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    border-bottom: none;
+    border-radius: 15px 15px 0px 0px;
+}
+
+.card-body {
+    padding: 30px;
+}
+
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+
+main {
+    flex: 1;
+}
+
+
+footer {
+    background-color: #343a40;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+} */
+
+/* end login page */
    
 /*# sourceMappingURL=style.css.map */
