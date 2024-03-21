@@ -961,6 +961,7 @@ input, select {
     cursor: pointer;
     font-size: 16px;
 }
+
 .btn-submit:hover {
     /* background-color: transparent;
     background-color: #45a049; */
@@ -1652,9 +1653,9 @@ body.show-sidebar-cart {
     margin: 0;
 } */
 
-.container {
-    margin-top: 100px;
-}
+/* .login_container {
+  margin-top: 100px;
+} */
 
 /*
 .card {
