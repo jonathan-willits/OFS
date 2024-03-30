@@ -3,6 +3,7 @@ import backend.Database;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+
 import java.sql.ResultSet;
 
 public class DatabaseManager {
@@ -11,8 +12,8 @@ public class DatabaseManager {
 
     public DatabaseManager(){
         this.db = new Database("jdbc:sqlite:OFS.db");       // create database
-        db.create_tables();                                    // create tables
-        db.init_tables();
+        db.createTables();                                    // create tables
+        // db.init_tables();
         conn = db.connect();
     }
     /**
@@ -22,7 +23,7 @@ public class DatabaseManager {
      * @param email     must be not null
      * @param type      0 = customer, 1 = employee
      */
-    public void add_user(String username, String password, String email, int type){
+    public void add_user_to_db(String username, String password, String email, int type){
         String s = "INSERT INTO USER (username, password, email, type) VALUES (?,?,?,?)";
         try {
             PreparedStatement pstmt = conn.prepareStatement(s);
@@ -72,6 +73,35 @@ public class DatabaseManager {
             return rs.getString(1);
         }   catch (SQLException e) {
             return e.getMessage();
+        }
+    }
+
+    /**
+     * method to get values of all columns from table matching a given id
+     * @param table
+     * @param id
+     * @return
+     */
+    public ResultSet query_all_from_id(String table, int id) {
+        String s = "SELECT * FROM " + table + " WHERE id = ?";
+        try {
+            PreparedStatement pstmt = conn.prepareStatement(s);
+            pstmt.setInt(1, id);
+            return pstmt.executeQuery();
+        }   catch (SQLException e) {
+            return null;
+        }
+    }
+
+    public int get_id_from_value(String table, String column, String value){
+        String s = "SELECT id FROM " + table + " WHERE " + column + " = ?";
+        try {
+            PreparedStatement pstmt = conn.prepareStatement(s);
+            pstmt.setString(1, value);
+            ResultSet rs = pstmt.executeQuery();
+            return rs.getInt(1);
+        }   catch (SQLException e) {
+            return -1;
         }
     }
 }

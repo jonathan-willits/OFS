@@ -31,28 +31,40 @@ public class Database {
     /*
      * Create tables for data storage
      */
-    public void create_tables(){
+    public void createTables(){
+        // String to create password table
+		String initPassword = "CREATE TABLE IF NOT EXISTS password (\nid integer PRIMARY KEY, \n key text NOT NULL);";
+
+		// String to set default password
+		// String defPassword = "INSERT INTO password(key) VALUES ('p')";
+
         // String to create table for user data
-        String initUser = "CREATE TABLE IF NOT EXISTS user (id integer PRIMARY KEY, username text NOT NULL UNIQUE, password text NOT NULL, first_name text, last_name text, email text NOT NULL, type int CHECK (type in (0, 1)))";
+        String initUser = "CREATE TABLE IF NOT EXISTS user (id integer PRIMARY KEY, name text NOT NULL, type ENUM('emp', 'cust') NOT NULL DEFAULT 'cust')";
+        
+        // String to insert new user
+        // String defUser = "INSERT INTO user(name, type) VALUES(?, ?)";
 
         // String to create table for item data
-        String initItem = "CREATE TABLE IF NOT EXISTS item (id integer PRIMARY KEY, name text NOT NULL, price REAL NOT NULL, description text)";
+        String initItem = "CREATE TABLE IF NOT EXISTS item(id integer PRIMARY KEY, name text NOT NULL, price REAL NOT NULL, description text)";
+
+        // String to insert new item
+        // String defItem = "INSERT INTO item(name, price, description) VALUES(?, ?, ?)";
 
         // create tables
         try(Connection conn = this.connect(); Statement stmt = conn.createStatement()){
+            stmt.execute(initPassword);
             stmt.execute(initUser);
             stmt.execute(initItem);
-            conn.close();
         } catch (SQLException e){
             System.out.println(e.getMessage());
-        }       
+        }
+
+        
     }
 
-    /*
-     * Populates tables with initial data
-     */
-    public void init_tables(){
-
+    public static void main (String[] args) throws ClassNotFoundException{
+        Database db = new Database("jdbc:sqlite:OFS.db");
+        db.createTables();
+        db.connect();
     }
-
 }
