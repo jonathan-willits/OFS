@@ -1,4 +1,4 @@
-package controller;
+package edu.sjsu.cs.cs160_project.controller;
 
 public class Item {
     private String name, quantity, description, imageURL;

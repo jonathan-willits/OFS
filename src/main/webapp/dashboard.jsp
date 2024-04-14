@@ -42,7 +42,7 @@
     <!-- header section strats -->
     <header class="header_section">
       <nav class="navbar navbar-expand-lg custom_nav-container ">
-        <a class="navbar-brand" href="home.html">
+        <a class="navbar-brand" href="home.jsp">
           <span>
             OFS
           </span>
@@ -66,7 +66,7 @@
             </li>
           </ul>
           <div class="user_option">
-            <a href="home.html">
+            <a href="home.jsp">
               <i class="fa fa-user" aria-hidden="true"></i>
               <span>
                 Sign out

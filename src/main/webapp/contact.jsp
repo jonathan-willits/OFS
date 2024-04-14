@@ -1,35 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OFS - Bananas, 3lb</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-        /* .hero_area { background-color: #f2f2f2; } */
-        .header_section .navbar { padding-top: 15px; padding-bottom: 15px; margin-bottom: 0; }
-        .slider_section { text-align: center; padding: 20px 0; margin-top: 0; }
-        .container { display: flex; max-width: 1200px; margin: auto; padding: 20px; align-items: flex-start; }
-        .product-image { flex: 1; text-align: center; }
-        .product-details { flex: 2; padding-left: 20px; }
-        .product-title { font-size: 24px; margin-bottom: 10px; }
-        .product-price { font-weight: bold; color: #C00; margin-bottom: 20px; }
-        img { max-width: 100%; height: auto; }
-        .add-to-cart { background-color: #228b22; color: white; padding: 10px 20px; border: none; cursor: pointer; font-size: 18px; margin-top: 20px; }
-        .product-description { margin-top: 20px; }
-    </style>
-    <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet" />
-</head>
-<body>
+<html>
 
-<div class="hero_area">
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="images/shoppingcart.png" type="image/x-icon">
+
+  <title>
+    OFS - Contact Us
+  </title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="hero_area">
     <!-- header section strats -->
     <header class="header_section">
       <nav class="navbar navbar-expand-lg custom_nav-container ">
-        <a class="navbar-brand" href="home.html">
+        <a class="navbar-brand" href="home.jsp">
           <span>
             OFS
           </span>
@@ -41,10 +46,10 @@
         <div class="collapse navbar-collapse innerpage_navbar" id="navbarSupportedContent">
           <ul class="navbar-nav  ">
             <li class="nav-item ">
-              <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="home.jsp">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="shop.html">
+            <li class="nav-item">
+              <a class="nav-link" href="shop.jsp">
                 Shop
               </a>
             </li>
@@ -52,21 +57,21 @@
               <a class="nav-link" href="why.html">
                 Why Us
               </a>
-            </li> -->
-            <!-- <li class="nav-item">
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="testimonial.html">
                 Testimonial
               </a>
             </li> -->
-            <li class="nav-item">
+            <li class="nav-item active">
               <a class="nav-link" href="contact.html">Contact Us</a>
             </li>
           </ul>
           <div class="user_option">
-            <a href="Login.html">
+            <a href="Login.jsp">
               <i class="fa fa-user" aria-hidden="true"></i>
               <span>
-                Login/Signup
+                Login/Sign-up
               </span>
             </a>
             <!-- <a href="">
@@ -155,7 +160,7 @@
               </div>
               <div class="action-buttons">
                 <a class="view-cart-button" href="#">Cart</a>
-                <a class="checkout-button" href="checkout.html">Checkout</a>
+                <a class="checkout-button" href="checkout.jsp">Checkout</a>
               </div>
             </main>
           </aside>
@@ -172,46 +177,150 @@
     </header>
     <!-- end header section -->
 
-    <section class="slider_section">
-    <div class="slider_container">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col"></div>
-                    <div class="detail-box">
-                        <h1>
-                            <a href="fruits.html" class="slider-button small-button">Fruits</a>
-                            <a href="vegetables.html" class="slider-button small-button">Vegetables</a>
-                            <a href="meat.html" class="slider-button small-button">Meat</a>
-                            <a href="beverages.html" class="slider-button small-button">Beverages</a>
-                        </h1>
-                    </div>
-                </div>
+  </div>
+  <!-- end hero area -->
+
+  <!-- contact section -->
+
+  <section class="contact_section layout_padding">
+    <div class="container px-0">
+      <div class="heading_container ">
+        <h2 class="">
+          Contact Us
+        </h2>
+      </div>
+    </div>
+    <div class="container container-bg">
+      <div class="row">
+        <!-- <div class="col-lg-7 col-md-6 px-0">
+          <div class="map_container">
+            <div class="map-responsive">
+              <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&q=Eiffel+Tower+Paris+France" width="600" height="300" frameborder="0" style="border:0; width: 100%; height:100%" allowfullscreen></iframe>
             </div>
+          </div>
+        </div> -->
+        <div class="col-md-6 col-lg-5 px-0">
+          <form action="#">
+            <div>
+              <input type="text" placeholder="Name" />
+            </div>
+            <div>
+              <input type="email" placeholder="Email" />
+            </div>
+            <div>
+              <input type="text" placeholder="Phone" />
+            </div>
+            <div>
+              <input type="text" class="message-box" placeholder="Message" />
+            </div>
+            <div class="d-flex ">
+              <button>
+                SEND
+              </button>
+            </div>
+          </form>
         </div>
+      </div>
     </div>
-</section>
+  </section>
 
+  <!-- end contact section -->
 
+  <!-- info section -->
 
-</div>
-
-<div class="container">
-    <div class="product-image">
-        <img src="images/banana.png" alt="Bananas, 3lb">
+  <section class="info_section  layout_padding2-top">
+    <div class="social_container">
+      <div class="social_box">
+        <a href="">
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+        </a>
+        <a href="">
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+        </a>
+        <a href="">
+          <i class="fa fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a href="">
+          <i class="fa fa-youtube" aria-hidden="true"></i>
+        </a>
+      </div>
     </div>
-    <div class="product-details">
-        <div class="product-title">Bananas, 3lb</div>
-        <div class="product-price">$2.29</div>
-        <div class="product-description">
-            <p>Organic bananas for anyone to enjoy. Perfect for a healthy breakfast.</p>
+    <div class="info_container ">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-3">
+            <h6>
+              ABOUT US
+            </h6>
+            <p>
+              Your Neighborhood Organic Market Online
+            </p>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="info_form ">
+              <h5>
+                Weekly Savings
+              </h5>
+              <form action="#">
+                <input type="email" placeholder="Enter your email">
+                <button>
+                  Subscribe
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <h6>
+              NEED HELP
+            </h6>
+            <p>
+              For inquiry and assistance, please send us a message.
+            </p>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <h6>
+              CONTACT US
+            </h6>
+            <div class="info_link-box">
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span> Two Washington Square, San Jose, CA 95192 </span>
+              </a>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span> +1 (408) 123-4567 </span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span> OFS@OFS.com </span>
+              </a>
+            </div>
+          </div>
         </div>
-        <button class="add-to-cart">Add to Cart</button>
+      </div>
     </div>
-</div>
+    <!-- footer section -->
+    <footer class=" footer_section">
+      <div class="container">
+        <p>
+          &copy; <span id="displayYear"></span> All Rights Reserved By
+          <a href="https://html.design/">OFS</a>
+        </p>
+      </div>
+    </footer>
+    <!-- footer section -->
 
-<script src="js/jquery-3.4.1.min.js"></script>
-<script src="js/bootstrap.js"></script>
-<script src="js/custom.js"></script>
+  </section>
+
+  <!-- end info section -->
+
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <script src="js/custom.js"></script>
 
 </body>
+
 </html>

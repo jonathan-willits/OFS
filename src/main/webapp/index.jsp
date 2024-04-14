@@ -147,10 +147,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="home.html">Home</a>
+                        <a class="nav-link" href="home.jsp">Home</a>
                     </li>
                     <!-- <li class="nav-item">
-                        <a class="nav-link" href="Login.html">Profile</a>
+                        <a class="nav-link" href="Login.jsp">Profile</a>
                     </li> -->
                 </ul>
             </div>
@@ -158,7 +158,7 @@
     </header>
     <!-- <header class="header_section">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="home.html">
+          <a class="navbar-brand" href="home.jsp">
             <span>
               OFS
             </span>
@@ -170,15 +170,15 @@
           <div class="collapse navbar-collapse innerpage_navbar" id="navbarSupportedContent">
             <ul class="navbar-nav  ">
               <li class="nav-item ">
-                <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="home.jsp">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="shop.html">
+                <a class="nav-link" href="shop.jsp">
                   Shop
                 </a>
 
               <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact Us</a>
+                <a class="nav-link" href="contact.jsp">Contact Us</a>
               </li>
             </ul>
             <div class="user_option">
@@ -211,7 +211,7 @@
                     </div>
                     <div class="card-body">
                         <!-- <form method="post" onsubmit="return showSuccessMessage()"> -->
-                          <form name="RegisterForm" method="POST" action="registerServlet">
+                          <form name="RegisterServlet" method="POST" action="registerServlet">
                             <div class="form-group">
                                 <label for="email">Email Address:</label>
                                 <input type="email" class="form-control" name="email" id="email" required>
@@ -234,7 +234,7 @@
                         </form>
                         <div id="success-message" class="alert alert-success d-none" role="alert">
                             Congrats, your account has been made!
-                            <a href="question.html" title="Go to question page">Go to question page</a>
+                            <a href="question.jsp" title="Go to question page">Go to question page</a>
                         </div>
                         <div id="message">
                             <p>Password must contain the following:</p>
@@ -244,7 +244,7 @@
                             <p id="length" class="invalid">Minimum <b>8 characters</b></p>
                           </div>
                         <div class="mt-3">
-                            <p class="text-center">Already have an account?<a href="Login.html">Login</a></p>
+                            <p class="text-center">Already have an account?<a href="Login.jsp">Login</a></p>
                         </div>
                     </div>
                     <div class="card-footer"></div>

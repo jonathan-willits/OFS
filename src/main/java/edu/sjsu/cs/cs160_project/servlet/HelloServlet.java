@@ -1,4 +1,4 @@
-package edu.sjsu.cs.cs160_project;
+package edu.sjsu.cs.cs160_project.servlet;
 
 import java.io.*;
 

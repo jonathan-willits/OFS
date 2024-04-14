@@ -1,4 +1,4 @@
-package controller;
+package edu.sjsu.cs.cs160_project.controller;
 
 import backend.Database;
 import java.util.List;

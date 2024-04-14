@@ -31,7 +31,7 @@
     <!-- header section strats -->
     <header class="header_section">
       <nav class="navbar navbar-expand-lg custom_nav-container ">
-        <a class="navbar-brand" href="home.html">
+        <a class="navbar-brand" href="home.jsp">
           <span>
             OFS
           </span>
@@ -46,7 +46,7 @@
               <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="shop.html">
+              <a class="nav-link" href="shop.jsp">
                 Shop
               </a>
             </li>
@@ -61,11 +61,11 @@
               </a>
             </li> -->
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact Us</a>
+              <a class="nav-link" href="contact.jsp">Contact Us</a>
             </li>
           </ul>
           <div class="user_option">
-            <a href="Login.html">
+            <a href="Login.jsp">
               <i class="fa fa-user" aria-hidden="true"></i>
               <span>
                 Login/Sign-up
@@ -157,7 +157,7 @@
               </div>
               <div class="action-buttons">
                 <a class="view-cart-button" href="#">Cart</a>
-                <a class="checkout-button" href="checkout.html">Checkout</a>
+                <a class="checkout-button" href="checkout.jsp">Checkout</a>
               </div>
             </main>
           </aside>
@@ -373,7 +373,7 @@
       <div class="row">
         <div class="col-sm-6 col-md-4 col-lg-3">
           <div class="box">
-            <a href="product.html">
+            <a href="product.jsp">
               <div class="img-box">
                 <img src="images/banana.png" alt="">
               </div>
@@ -397,7 +397,7 @@
         </div>
         <div class="col-sm-6 col-md-4 col-lg-3">
           <div class="box">
-            <a href="product.html">
+            <a href="product.jsp">
               <div class="img-box">
                 <img src="images/avocado.png" alt="">
               </div>
@@ -421,7 +421,7 @@
         </div>
         <div class="col-sm-6 col-md-4 col-lg-3">
           <div class="box">
-            <a href="product.html">
+            <a href="product.jsp">
               <div class="img-box">
                 <img src="images/strawberries.png" alt="">
               </div>
@@ -445,7 +445,7 @@
         </div>
         <div class="col-sm-6 col-md-4 col-lg-3">
           <div class="box">
-            <a href="product.html">
+            <a href="product.jsp">
               <div class="img-box">
                 <img src="images/wheatbread.png" alt="">
               </div>
@@ -469,7 +469,7 @@
         </div>
         <div class="col-sm-6 col-md-4 col-lg-3">
           <div class="box">
-            <a href="product.html">
+            <a href="product.jsp">
               <div class="img-box">
                 <img src="images/broccoli.png" alt="">
               </div>
@@ -493,7 +493,7 @@
         </div>
         <div class="col-sm-6 col-md-4 col-lg-3">
           <div class="box">
-            <a href="product.html">
+            <a href="product.jsp">
               <div class="img-box">
                 <img src="images/greenbeans.png" alt="">
               </div>
@@ -517,7 +517,7 @@
         </div>
         <div class="col-sm-6 col-md-4 col-lg-3">
           <div class="box">
-            <a href="product.html">
+            <a href="product.jsp">
               <div class="img-box">
                 <img src="images/shitake.png" alt="">
               </div>
@@ -541,7 +541,7 @@
         </div>
         <div class="col-sm-6 col-md-4 col-lg-3">
           <div class="box">
-            <a href="product.html">
+            <a href="product.jsp">
               <div class="img-box">
                 <img src="images/lettuce.png" alt="">
               </div>

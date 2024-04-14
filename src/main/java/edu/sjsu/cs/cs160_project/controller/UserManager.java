@@ -1,4 +1,4 @@
-package controller;
+package edu.sjsu.cs.cs160_project.controller;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
