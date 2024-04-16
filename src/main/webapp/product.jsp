@@ -63,7 +63,7 @@
             </li>
           </ul>
           <div class="user_option">
-            <a href="Login.jsp">
+            <a href="login.jsp">
               <i class="fa fa-user" aria-hidden="true"></i>
               <span>
                 Login/Signup

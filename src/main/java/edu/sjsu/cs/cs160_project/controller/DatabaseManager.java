@@ -1,6 +1,6 @@
 package edu.sjsu.cs.cs160_project.controller;
 
-import backend.Database;
+import edu.sjsu.cs.cs160_project.database.Database;
 import java.util.List;
 import java.util.ArrayList;
 import java.sql.Connection;
@@ -12,8 +12,9 @@ public class DatabaseManager {
     private Database db;
     private Connection conn;
 
-    public DatabaseManager() {
-        this.db = new Database("jdbc:sqlite:OFS.db"); // create database
+    public DatabaseManager() throws ClassNotFoundException {
+        Class.forName("org.sqlite.JDBC");
+        this.db = new Database("jdbc:sqlite:database"); // create database
         db.create_tables(); // create tables
         db.init_tables();
         conn = db.connect();

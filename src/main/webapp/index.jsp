@@ -150,7 +150,7 @@
                         <a class="nav-link" href="home.jsp">Home</a>
                     </li>
                     <!-- <li class="nav-item">
-                        <a class="nav-link" href="Login.jsp">Profile</a>
+                        <a class="nav-link" href="login.jsp">Profile</a>
                     </li> -->
                 </ul>
             </div>
@@ -244,7 +244,7 @@
                             <p id="length" class="invalid">Minimum <b>8 characters</b></p>
                           </div>
                         <div class="mt-3">
-                            <p class="text-center">Already have an account?<a href="Login.jsp">Login</a></p>
+                            <p class="text-center">Already have an account? <a href="login.jsp">Login</a></p>
                         </div>
                     </div>
                     <div class="card-footer"></div>

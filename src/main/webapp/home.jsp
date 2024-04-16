@@ -65,7 +65,7 @@
             </li>
           </ul>
           <div class="user_option">
-            <a href="Login.jsp">
+            <a href="login.jsp">
               <i class="fa fa-user" aria-hidden="true"></i>
               <span>
                 Login/Sign-up
@@ -280,7 +280,7 @@
                       <p>
                         Organic Food Online
                       </p>
-                      <a href="">
+                      <a href="shop.jsp">
                         Shop
                       </a>
                     </div>
@@ -304,7 +304,7 @@
                       <p>
                         Organic Food Online
                       </p>
-                      <a href="">
+                      <a href="shop.jsp">
                         Shop
                       </a>
                     </div>
@@ -595,14 +595,14 @@
               <p>
                 Save on Organic Produce with Us
               </p>
-              <div class="btn-box">
-                <a href="#" class="btn1">
-                  Buy Now
-                </a>
-                <a href="#" class="btn2">
-                  See More
-                </a>
-              </div>
+<%--              <div class="btn-box">--%>
+<%--                <a href="#" class="btn1">--%>
+<%--                  Buy Now--%>
+<%--                </a>--%>
+<%--                <a href="#" class="btn2">--%>
+<%--                  See More--%>
+<%--                </a>--%>
+<%--              </div>--%>
             </div>
           </div>
         </div>
@@ -908,48 +908,48 @@
 
   <!-- contact section -->
 
-  <section class="contact_section ">
-    <div class="container px-0">
-      <div class="heading_container ">
-        <h2 class="">
-          Contact Us
-        </h2>
-      </div>
-    </div>
-    <div class="container container-bg">
-      <div class="row">
+<%--  <section class="contact_section ">--%>
+<%--    <div class="container px-0">--%>
+<%--      <div class="heading_container ">--%>
+<%--        <h2 class="">--%>
+<%--          Contact Us--%>
+<%--        </h2>--%>
+<%--      </div>--%>
+<%--    </div>--%>
+<%--    <div class="container container-bg">--%>
+<%--      <div class="row">--%>
         <!-- Map -->
-        <!-- <div class="col-lg-7 col-md-6 px-0">
-          <div class="map_container">
-            <div class="map-responsive">
-              <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&q=Eiffel+Tower+Paris+France" width="600" height="300" frameborder="0" style="border:0; width: 100%; height:100%" allowfullscreen></iframe>
-            </div>
-          </div>
-        </div> -->
-        <div class="col-md-6 col-lg-5 px-0">
-          <form action="#">
-            <div>
-              <input type="text" placeholder="Name" />
-            </div>
-            <div>
-              <input type="email" placeholder="Email" />
-            </div>
-            <div>
-              <input type="text" placeholder="Phone" />
-            </div>
-            <div>
-              <input type="text" class="message-box" placeholder="Message" />
-            </div>
-            <div class="d-flex ">
-              <button>
-                SEND
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
+<%--        <div class="col-lg-7 col-md-6 px-0">--%>
+<%--          <div class="map_container">--%>
+<%--            <div class="map-responsive">--%>
+<%--              <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&q=Eiffel+Tower+Paris+France" width="600" height="300" frameborder="0" style="border:0; width: 100%; height:100%" allowfullscreen></iframe>--%>
+<%--            </div>--%>
+<%--          </div>--%>
+<%--        </div>--%>
+<%--        <div class="col-md-6 col-lg-5 px-0">--%>
+<%--          <form action="#">--%>
+<%--            <div>--%>
+<%--              <input type="text" placeholder="Name" />--%>
+<%--            </div>--%>
+<%--            <div>--%>
+<%--              <input type="email" placeholder="Email" />--%>
+<%--            </div>--%>
+<%--            <div>--%>
+<%--              <input type="text" placeholder="Phone" />--%>
+<%--            </div>--%>
+<%--            <div>--%>
+<%--              <input type="text" class="message-box" placeholder="Message" />--%>
+<%--            </div>--%>
+<%--            <div class="d-flex ">--%>
+<%--              <button>--%>
+<%--                SEND--%>
+<%--              </button>--%>
+<%--            </div>--%>
+<%--          </form>--%>
+<%--        </div>--%>
+<%--      </div>--%>
+<%--    </div>--%>
+<%--  </section>--%>
 
   <!-- end contact section -->
 
@@ -1038,22 +1038,22 @@
   <!-- info section -->
 
   <section class="info_section  layout_padding2-top">
-    <div class="social_container">
-      <div class="social_box">
-        <a href="">
-          <i class="fa fa-facebook" aria-hidden="true"></i>
-        </a>
-        <a href="">
-          <i class="fa fa-twitter" aria-hidden="true"></i>
-        </a>
-        <a href="">
-          <i class="fa fa-instagram" aria-hidden="true"></i>
-        </a>
-        <a href="">
-          <i class="fa fa-youtube" aria-hidden="true"></i>
-        </a>
-      </div>
-    </div>
+<%--    <div class="social_container">--%>
+<%--      <div class="social_box">--%>
+<%--        <a href="">--%>
+<%--          <i class="fa fa-facebook" aria-hidden="true"></i>--%>
+<%--        </a>--%>
+<%--        <a href="">--%>
+<%--          <i class="fa fa-twitter" aria-hidden="true"></i>--%>
+<%--        </a>--%>
+<%--        <a href="">--%>
+<%--          <i class="fa fa-instagram" aria-hidden="true"></i>--%>
+<%--        </a>--%>
+<%--        <a href="">--%>
+<%--          <i class="fa fa-youtube" aria-hidden="true"></i>--%>
+<%--        </a>--%>
+<%--      </div>--%>
+<%--    </div>--%>
     <div class="info_container ">
       <div class="container">
         <div class="row">
@@ -1062,40 +1062,46 @@
               ABOUT US
             </h6>
             <p>
-              Your Neighborhood Organic Market Online
+              Your Neighborhood <br>
+              Organic Market Online
             </p>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="info_form ">
-              <h5>
-                Weekly Savings
-              </h5>
-              <form action="#">
-                <input type="email" placeholder="Enter your email">
-                <button>
-                  Subscribe
-                </button>
-              </form>
-            </div>
+            <a href="https://github.com/anniebluu/CS160_Project" target="_blank" rel="noopener noreferrer">
+              <i class="fa fa-github fa-lg" aria-hidden="true"></i>
+            </a>
           </div>
           <div class="col-md-6 col-lg-3">
             <h6>
               NEED HELP
             </h6>
             <p>
-              For inquiry and assistance, please send us a message.
+              For inquiry and assistance, <br>
+              please send us a message.
             </p>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <h6>
+              CUSTOMER CARE
+            </h6>
+            <div class="info_link-box">
+              <a href="">
+                <%--                <i class="fa fa-phone" aria-hidden="true"></i>--%>
+                <span> Customer Service </span>
+              </a>
+              <a href="">
+<%--                <i class="fa fa-phone" aria-hidden="true"></i>--%>
+                <span> Return Policy </span>
+              </a>
+              <a href="">
+<%--                <i class="fa fa-envelope" aria-hidden="true"></i>--%>
+                <span> Shipping Policy </span>
+              </a>
+            </div>
           </div>
           <div class="col-md-6 col-lg-3">
             <h6>
               CONTACT US
             </h6>
             <div class="info_link-box">
-              <!-- Map -->
-              <!-- <a href="">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <span> Gb road 123 london Uk </span>
-              </a> -->
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span> +1 (408) 123-4567 </span>
@@ -1114,7 +1120,7 @@
       <div class="container">
         <p>
           &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="home.html">OFS</a>
+          <a href="home.jsp">OFS</a>
         </p>
       </div>
     </footer>

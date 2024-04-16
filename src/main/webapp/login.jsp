@@ -160,8 +160,8 @@
                         <h2>OFS - Login</h2>
                     </div>
                     <div class="card-body">
-                        <form method="post">
-                            <div class="form-group">
+                        <form name=LoginServlet" method="POST" action="loginServlet">
+                        <div class="form-group">
                                 <label for="username">Username:</label>
                                 <input type="text" class="form-control" name="username" id="username" required>
                             </div>
@@ -173,7 +173,7 @@
                         </form>
                         <div class="mt-3">
                             <p class="text-center">Don't have an account? 
-                              <a class="signup_link" href="register.html">Sign Up</a>
+                              <a class="signup_link" href="index.jsp">Sign Up</a>
                             </p>
                         </div>
                     </div>

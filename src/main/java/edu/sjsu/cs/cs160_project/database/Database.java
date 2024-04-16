@@ -1,4 +1,4 @@
-package backend;
+package edu.sjsu.cs.cs160_project.database;
 
 import java.sql.*;
 
