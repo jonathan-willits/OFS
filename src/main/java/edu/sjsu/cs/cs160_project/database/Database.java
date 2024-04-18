@@ -2,7 +2,7 @@ package edu.sjsu.cs.cs160_project.database;
 
 import java.sql.*;
 
-// import controller.DatabaseManager;
+ import edu.sjsu.cs.cs160_project.controller.DatabaseManager;
 // import controller.ItemManager;
 // import controller.UserManager;
 // import controller.Item;
@@ -111,20 +111,21 @@ public class Database {
     }
 
     // main method for testing
-    // public static void main (String[] args) throws ClassNotFoundException{
-    // DatabaseManager dbm = new DatabaseManager("jdbc:sqlite:test.db");
-    // ItemManager im = new ItemManager(dbm);
-    // Item i = im.get_item("Bananas");
-    // if (i != null) {
-    // System.out.println(i.toString());
-    // }
-    // else {System.out.println("item not found");}
-    // UserManager um = new UserManager(dbm);
-    // User u = um.get_user("admin");
-    // if (u != null) {
-    // System.out.println(u.toString());
-    // }
-    // else {System.out.println("user not found");}
-    // System.out.println(dbm.get_ids_from_value("item", "quantity", "1 LB"));
-    // }
-}
+     public static void main (String[] args) throws ClassNotFoundException {
+         DatabaseManager dbm = new DatabaseManager();
+     }}
+//     ItemManager im = new ItemManager(dbm);
+//     Item i = im.get_item("Bananas");
+//     if (i != null) {
+//     System.out.println(i.toString());
+//     }
+//     else {System.out.println("item not found");}
+//     UserManager um = new UserManager(dbm);
+//     User u = um.get_user("admin");
+//     if (u != null) {
+//     System.out.println(u.toString());
+//     }
+//     else {System.out.println("user not found");}
+//     System.out.println(dbm.get_ids_from_value("item", "quantity", "1 LB"));
+//     }
+//    }
