@@ -22,14 +22,14 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
 
         PrintWriter writer = response.getWriter();
-        writer.println("<html> username: " + username + ", password: " + password + "</html>");
-        writer.flush();
+
 
         DatabaseManager db = null;
+        User user = null;
         try {
             db = new DatabaseManager();
             UserManager u = new UserManager(db);
-            User user = u.get_user("name");
+            user = u.get_user(username);
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
@@ -38,12 +38,15 @@ public class LoginServlet extends HttpServlet {
         // if found, redirect to user profile page
         // else alert user that username or password is incorrect
 
-        if(Objects.equals(db.query_from_id("user", "name", 0), username) && Objects.equals(db.query_from_id("user", "password", 0), password)) {
-            response.sendRedirect("profile.jsp");
+        writer.println(user.get_name() + " " + user.get_password() + " " + user.get_email());
+        writer.println("<html> username: " + username + ", password: " + password + "</html>");
+
+        if (Objects.equals(user.get_name(), username) && Objects.equals(user.get_password(), password)){
+//            response.sendRedirect("profile.jsp");
             writer.println("<html> username or password is correct </html>");
             writer.flush();
         } else {
-            writer.println ("<html><body><script>alert('Hello World!');</script></body></html>");
+            writer.println("<html><body><script>alert('Hello World!');</script></body></html>");
             writer.println("<script type=\"text/javascript\">");
             writer.println("window.alert('User or password incorrect');");
             writer.println("location='login.jsp';");
