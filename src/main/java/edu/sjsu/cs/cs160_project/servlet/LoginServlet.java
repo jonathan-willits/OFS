@@ -23,7 +23,6 @@ public class LoginServlet extends HttpServlet {
 
         PrintWriter writer = response.getWriter();
 
-
         DatabaseManager db = null;
         User user = null;
         try {
@@ -38,23 +37,17 @@ public class LoginServlet extends HttpServlet {
         // if found, redirect to user profile page
         // else alert user that username or password is incorrect
 
-        writer.println(user.get_name() + " " + user.get_password() + " " + user.get_email());
-        writer.println("<html> username: " + username + ", password: " + password + "</html>");
-
-        if (Objects.equals(user.get_name(), username) && Objects.equals(user.get_password(), password)){
-//            response.sendRedirect("profile.jsp");
-            writer.println("<html> username or password is correct </html>");
-            writer.flush();
-        } else {
-            writer.println("<html><body><script>alert('Hello World!');</script></body></html>");
+        if (user != null && Objects.equals(user.get_name(), username) && Objects.equals(user.get_password(), password)){
             writer.println("<script type=\"text/javascript\">");
-            writer.println("window.alert('User or password incorrect');");
+            writer.println("location='home.jsp';");
+            writer.println("</script>");
+        } else {
+            // alert user that username or password is incorrect
+            writer.println("<script type=\"text/javascript\">");
+            writer.println("alert('Username or password incorrect');");
             writer.println("location='login.jsp';");
             writer.println("</script>");
-//            writer.println("<html> username or password is incorrect </html>");
             writer.flush();
-
-            // alert user that username or password is incorrect
         }
     }
 

@@ -14,7 +14,7 @@ public class User {
      * @param e     user email
      * @param t     user type
      */
-    User(String n, String pw, String e, int t) {
+    public User(String n, String pw, String e, int t) {
         this.name = n;
         this.password = pw;
         this.email = e;
@@ -87,5 +87,4 @@ public class User {
         return "User [type=" + type + ", name=" + name + ", password=" + password + ", email=" + email
                 + ", def_address=" + def_address + "]";
     }
-
 }
