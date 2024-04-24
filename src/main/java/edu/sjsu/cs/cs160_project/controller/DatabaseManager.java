@@ -14,7 +14,7 @@ public class DatabaseManager {
 
     public DatabaseManager() throws ClassNotFoundException {
         Class.forName("org.sqlite.JDBC");
-        this.db = new Database("jdbc:sqlite:database"); // create database
+        this.db = new Database("jdbc:sqlite:database.db"); // create database
         db.create_tables(); // create tables
         db.init_tables();
         conn = db.connect();
