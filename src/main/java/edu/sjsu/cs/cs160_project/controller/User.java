@@ -87,5 +87,4 @@ public class User {
         return "User [type=" + type + ", name=" + name + ", password=" + password + ", email=" + email
                 + ", def_address=" + def_address + "]";
     }
-
 }

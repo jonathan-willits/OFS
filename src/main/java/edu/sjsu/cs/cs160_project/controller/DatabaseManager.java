@@ -15,9 +15,9 @@ public class DatabaseManager {
 
     public DatabaseManager() throws ClassNotFoundException {
         Class.forName("org.sqlite.JDBC");
-        this.db = new Database("jdbc:sqlite:database"); // create database
+        this.db = new Database("jdbc:sqlite:database.db"); // create database
+        this.conn = db.connect();
         db.create_tables(); // create tables
-        conn = db.connect();
         if (get_count("user") == 0) {   // if no default data added, add default data
             db.init_tables();
         }
@@ -25,8 +25,8 @@ public class DatabaseManager {
 
     public DatabaseManager(String url) {
         this.db = new Database(url); // create database
+        this.conn = db.connect();
         db.create_tables(); // create tables
-        conn = db.connect();
         if (get_count("user") == 0) {
             db.init_tables();
         }
@@ -50,13 +50,13 @@ public class DatabaseManager {
             pstmt.setInt(4, type);
             pstmt.executeUpdate();
         } catch (SQLException e) {
-            e.getMessage();
+            throw new RuntimeException(e);
         }
     }
 
     public void add_item_to_db(String itemname, String quantity, String description, double price, String img) {
         String s = "INSERT INTO ITEM(name, quantity, price, description, image) VALUES(?,?,?,?,?,?)";
-        try {
+        try (Connection conn = db.connect();){
             PreparedStatement pstmt = conn.prepareStatement(s);
             pstmt.setString(1, itemname);
             pstmt.setString(2, quantity);
@@ -79,7 +79,7 @@ public class DatabaseManager {
      */
     public String query_from_id(String table, String col, int id) {
         String s = "SELECT " + col + " FROM " + table + " WHERE id = ?";
-        try {
+        try (Connection conn = db.connect();){
             PreparedStatement pstmt = conn.prepareStatement(s);
             pstmt.setInt(1, id);
             ResultSet rs = pstmt.executeQuery();
@@ -100,7 +100,7 @@ public class DatabaseManager {
      */
     public String query_from_value(String table, String out_col, String in_col, String value) {
         String s = "SELECT " + out_col + " FROM " + table + " WHERE " + in_col + " = ?";
-        try {
+        try (Connection conn = db.connect();){
             PreparedStatement pstmt = conn.prepareStatement(s);
             pstmt.setString(1, value);
             ResultSet rs = pstmt.executeQuery();
@@ -124,6 +124,34 @@ public class DatabaseManager {
             pstmt.setInt(1, id);
             return pstmt.executeQuery();
         } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public ResultSet get_all_tuples(String table) {
+        String s = "SELECT * FROM " + table;
+        try{
+            Statement stmt = conn.createStatement();
+            return stmt.executeQuery(s);
+        } catch (SQLException e){
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * Method to query database for all columns from table matching a given column value
+     * @param table     target table
+     * @param column    target column
+     * @param value     target value
+     * @return          ResultSet containing all columns with column = value
+     */
+        public ResultSet get_all_from_value(String table, String column, Object value) {
+        String s = "SELECT * FROM " + table + " WHERE " + column + " = ?";
+        try (Connection conn = db.connect();){
+            PreparedStatement pstmt = conn.prepareStatement(s);
+            pstmt.setObject(1, value);
+            return pstmt.executeQuery();
+        } catch (SQLException e) {
             return null;
         }
     }
@@ -140,7 +168,7 @@ public class DatabaseManager {
     public List<Integer> get_ids_from_value(String table, String column, Object value) {
         String s = "SELECT id FROM " + table + " WHERE " + column + " = ?";
         List<Integer> nums = new ArrayList<Integer>();
-        try {
+        try (Connection conn = db.connect();){
             PreparedStatement pstmt = conn.prepareStatement(s);
             pstmt.setObject(1, value);
             ResultSet rs = pstmt.executeQuery();
@@ -166,7 +194,7 @@ public class DatabaseManager {
      */
     public int get_single_id_from_value(String table, String column, Object value) {
         String s = "SELECT id FROM " + table + " WHERE " + column + " = ?";
-        try {
+        try (Connection conn = db.connect();){
             PreparedStatement pstmt = conn.prepareStatement(s);
             pstmt.setObject(1, value);
             ResultSet rs = pstmt.executeQuery();
@@ -187,7 +215,7 @@ public class DatabaseManager {
      */
     public int get_count(String table, String column){
         String s = "SELECT COUNT(" + column + ") FROM " + table;
-        try {
+        try (Connection conn = db.connect();){
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(s);
             return rs.getInt(1);
@@ -203,7 +231,7 @@ public class DatabaseManager {
      */
     public int get_count(String table){
         String s = "SELECT COUNT(*) FROM " + table;
-        try {
+        try (Connection conn = db.connect();){
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(s);
             return rs.getInt(1);
@@ -222,7 +250,7 @@ public class DatabaseManager {
      */
     public void update_value_from_id(String table, String column, int id, Object value){
         String s = "UPDATE " + table + " SET " + column + " = ? WHERE id = ?";
-        try {
+        try (Connection conn = db.connect();){
             PreparedStatement pstmt = conn.prepareStatement(s); // create PreparedStatement
             pstmt.setObject(1, value);           // set parameters
             pstmt.setInt(2, id);

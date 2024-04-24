@@ -47,22 +47,22 @@ public class Database {
         // String to create table for item data
         String initItem = "CREATE TABLE IF NOT EXISTS item(id integer PRIMARY KEY, name text NOT NULL UNIQUE, quantity text NOT NULL, price REAL NOT NULL, weight REAL NOT NULL, description text, imageURL text UNIQUE)";
 
-        // String to create table for order data
-        String initOrder = "CREATE TABLE IF NOT EXISTS order(id integer PRIMARY KEY, customer_id integer NOT NULL, tot_price REAL NOT NULL, tot_weight REAL NOT NULL, address_id integer NOT NULL, FOREIGN KEY(customer_id) REFERENCES user(id), FOREIGN KEY(address_id) REFERENCES address(id))";
-
-        // String to create table for cart data (i.e. items in each order)
-        String initCart = "CREATE TABLE IF NOT EXISTS cart(id integer PRIMARY KEY, order_id integer NOT NULL, item_id integer NOT NULL, FOREIGN KEY(order_id) REFERENCES order(id), FOREIGN KEY(item_id) REFERENCES item(id))";
-
         // String to create table for address data
         String initAddress = "CREATE TABLE IF NOT EXISTS address(id integer PRIMARY KEY, customer_id integer NOT NULL, location text NOT NULL, FOREIGN KEY(customer_id) REFERENCES user(id))";
+
+        // String to create table for order data
+        String initOrder = "CREATE TABLE IF NOT EXISTS orders(id integer PRIMARY KEY, customer_id integer NOT NULL, tot_price REAL NOT NULL, tot_weight REAL NOT NULL, address_id integer NOT NULL, FOREIGN KEY(customer_id) REFERENCES user(id), FOREIGN KEY(address_id) REFERENCES address(id))";
+
+        // String to create table for cart data (i.e. items in each order)
+        String initCart = "CREATE TABLE IF NOT EXISTS cart(id integer PRIMARY KEY, order_id integer NOT NULL, item_id integer NOT NULL, FOREIGN KEY(order_id) REFERENCES orders(id), FOREIGN KEY(item_id) REFERENCES item(id))";
 
         // create tables
         try (Connection conn = this.connect(); Statement stmt = conn.createStatement()) {
             stmt.execute(initUser);
+            stmt.execute(initAddress);
             stmt.execute(initItem);
             stmt.execute(initOrder);
             stmt.execute(initCart);
-            stmt.execute(initAddress);
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
