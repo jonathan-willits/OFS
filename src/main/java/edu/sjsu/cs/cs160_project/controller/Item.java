@@ -2,34 +2,43 @@ package edu.sjsu.cs.cs160_project.controller;
 
 public class Item {
     private String name, quantity, description, imageURL;
-    private double price;
+    private double price, weight;
     private int id;
 
     /**
-     * default constructor
+     * Default constructor
+     @param name          name of item
+     * @param quantity      quantity descriptor of item - ie 1 LB
+     * @param description   description of item
+     * @param price         price of item (double in USD)
+     * @param weight        weight of item(double in pounds)
+     * @param imageURL      image filename
      */
-    public Item(String name, String quantity, String description, double price, String imageURL) {
+    public Item(String name, String quantity, String description, double price, double weight, String imageURL) {
         this.name = name;
         this.quantity = quantity;
         this.description = description;
         this.price = price;
+        this.weight = weight;
         this.imageURL = imageURL;
     }
 
     /**
      * Item Constructor with id -- use ONLY for returns from db queries: ItemManager.get_item()
-     * @param name
-     * @param quantity
-     * @param description
-     * @param price
-     * @param imageURL
-     * @param id
+     * @param name          name of item
+     * @param quantity      quantity descriptor of item - ie 1 LB
+     * @param description   description of item
+     * @param price         price of item (double in USD)
+     * @param weight        weight of item(double in pounds)
+     * @param imageURL      image filename
+     * @param id            database id
      */
-    public Item(String name, String quantity, String description, double price, String imageURL, int id) {
+    public Item(String name, String quantity, String description, double price, double weight, String imageURL, int id) {
         this.name = name;
         this.quantity = quantity;
         this.description = description;
         this.price = price;
+        this.weight = weight;
         this.imageURL = imageURL;
         this.id = id;
     }
@@ -49,6 +58,8 @@ public class Item {
     public double get_price() {
         return price;
     }
+
+    public double get_weight() {return weight;}
 
     public String get_imageURL() {
         return imageURL;
@@ -78,9 +89,11 @@ public class Item {
         this.price = price;
     }
 
+    public void set_weight(double weight) {this.weight = weight;}
+
     @Override
     public String toString() {
         return "Item [name=" + name + ", quantity=" + quantity + ", description=" + description + ", imageURL="
-                + imageURL + ", price=" + price + "]";
+                + imageURL + ", price=" + price + ", weight=" + weight + "]";
     }
 }

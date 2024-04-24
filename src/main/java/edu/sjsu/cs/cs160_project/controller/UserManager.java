@@ -18,7 +18,7 @@ public class UserManager {
      */
     public User get_user(String n) {
         try {
-            ResultSet rs = db.query_all_from_id("user", db.get_single_id_from_value("user", "name", n));
+            ResultSet rs = db.get_all_from_id("user", db.get_single_id_from_value("user", "name", n));
             if (!rs.next()) { // empty ResultSet -> user not found in db
                 return null;
             }

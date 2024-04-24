@@ -14,7 +14,7 @@ public class User {
      * @param e     user email
      * @param t     user type
      */
-    User(String n, String pw, String e, int t) {
+    public User(String n, String pw, String e, int t) {
         this.name = n;
         this.password = pw;
         this.email = e;
@@ -29,7 +29,7 @@ public class User {
      * @param t     // user type
      * @param d     // user default address
      */
-    User(int i, String n, String pw, String e, int t, String d) {
+    public User(int i, String n, String pw, String e, int t, String d) {
         this.id = i;
         this.name = n;
         this.password = pw;

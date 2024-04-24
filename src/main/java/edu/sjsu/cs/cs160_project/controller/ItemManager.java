@@ -2,6 +2,8 @@ package edu.sjsu.cs.cs160_project.controller;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
+import java.util.ArrayList;
 
 public class ItemManager {
     private DatabaseManager db;
@@ -18,15 +20,13 @@ public class ItemManager {
      */
     public Item get_item(String n) {
         try {
-            ResultSet rs = db.query_all_from_id("item", db.get_single_id_from_value("item", "name", n));
+            ResultSet rs = db.get_all_from_id("item", db.get_single_id_from_value("item", "name", n));
             if (!rs.next()) { // ResultSet is empty -> no matching item found
                 return null;
             }
-            return new Item(rs.getString(2), rs.getString(3), rs.getString(5), rs.getDouble(4), rs.getString(6));
+            return new Item(rs.getString("name"), rs.getString("quantity"), rs.getString("description"), rs.getDouble("price"), rs.getDouble("weight"), rs.getString("imageURL"), rs.getInt("id"));
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
-            e.printStackTrace();
-            return null;
+            throw new IllegalStateException(e.getMessage());
         }
     }
 
@@ -41,18 +41,42 @@ public class ItemManager {
             db.add_item_to_db(i.get_name(), i.get_quantity(), i.get_description(), i.get_price(), i.get_imageURL());
         }
         else {                // item in db, so compare values and update if needed; already checked item name, so skip that
-            if (curr.get_quantity() != i.get_quantity()){   // check quantity, update if needed
+            if (!curr.get_quantity().equals(i.get_quantity())){   // check quantity, update if needed
+                System.out.println("updating weight");
                 db.update_value_from_id("item", "quantity", curr.get_id(), i.get_quantity());
             }
-            if (curr.get_description() != i.get_description()){ // check description, update if needed
+            if (!curr.get_description().equals(i.get_description())){ // check description, update if needed
                 db.update_value_from_id("item", "description", curr.get_id(), i.get_description());
             }
             if (curr.get_price() != i.get_price()){ // check price, update if needed
                 db.update_value_from_id("item", "price", curr.get_id(), i.get_price());
             }
-            if (curr.get_imageURL() != i.get_imageURL()){   // check image link, update if needed
+            if (curr.get_weight() != i.get_weight()){ // check weight, update if needed
+                db.update_value_from_id("item", "weight", curr.get_id(), i.get_weight());
+            }
+            if (!curr.get_imageURL().equals(i.get_imageURL())){   // check image link, update if needed
                 db.update_value_from_id("item", "imageURL", curr.get_id(), i.get_imageURL());
             }
         }
+    }
+
+        /**
+     * method to get all items in database
+     *
+     * @return ArrayList with all items from db
+     */
+    public List<Item> get_all_items() {
+        int count_items = db.get_count("item");
+        List<Item> i_list = new ArrayList<>();
+        for (int i = 1; i < count_items + 1; i++) {
+            try {
+                ResultSet rs = db.get_all_from_id("item", i);
+                i_list.add(
+                        new Item(rs.getString(2), rs.getString(3), rs.getString(6), rs.getDouble(4), rs.getDouble(5), rs.getString(7)));
+            } catch (SQLException e) {
+                throw new IllegalStateException(e.getMessage());
+            }
+        }
+        return i_list;
     }
 }

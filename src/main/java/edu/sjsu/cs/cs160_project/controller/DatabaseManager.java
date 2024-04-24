@@ -4,27 +4,32 @@ import edu.sjsu.cs.cs160_project.database.Database;
 import java.util.List;
 import java.util.ArrayList;
 import java.sql.Connection;
+import java.sql.Statement;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 
 public class DatabaseManager {
-    private Database db;
-    private Connection conn;
+    private final Database db;
+    private final Connection conn;
 
     public DatabaseManager() throws ClassNotFoundException {
         Class.forName("org.sqlite.JDBC");
         this.db = new Database("jdbc:sqlite:database"); // create database
         db.create_tables(); // create tables
-        db.init_tables();
         conn = db.connect();
+        if (get_count("user") == 0) {   // if no default data added, add default data
+            db.init_tables();
+        }
     }
 
     public DatabaseManager(String url) {
         this.db = new Database(url); // create database
         db.create_tables(); // create tables
-        db.init_tables();
         conn = db.connect();
+        if (get_count("user") == 0) {
+            db.init_tables();
+        }
     }
 
     /**
@@ -50,7 +55,7 @@ public class DatabaseManager {
     }
 
     public void add_item_to_db(String itemname, String quantity, String description, double price, String img) {
-        String s = "INSERT INTO ITEM(name, quantity, price, description, image) VALUES(?,?,?,?)";
+        String s = "INSERT INTO ITEM(name, quantity, price, description, image) VALUES(?,?,?,?,?,?)";
         try {
             PreparedStatement pstmt = conn.prepareStatement(s);
             pstmt.setString(1, itemname);
@@ -67,10 +72,10 @@ public class DatabaseManager {
     /**
      * method to query database table and column using id value
      * 
-     * @param table
-     * @param col
-     * @param id
-     * @return
+     * @param table target table
+     * @param col   target column
+     * @param id    target id
+     * @return      value of (table,column) matching input id
      */
     public String query_from_id(String table, String col, int id) {
         String s = "SELECT " + col + " FROM " + table + " WHERE id = ?";
@@ -108,11 +113,11 @@ public class DatabaseManager {
     /**
      * method to get values of all columns from table matching a given id
      * 
-     * @param table
-     * @param id
+     * @param table target table
+     * @param id    target id
      * @return may be >1 tuple (if value is not unique)
      */
-    public ResultSet query_all_from_id(String table, int id) {
+    public ResultSet get_all_from_id(String table, int id) {
         String s = "SELECT * FROM " + table + " WHERE id = ?";
         try {
             PreparedStatement pstmt = conn.prepareStatement(s);
@@ -122,6 +127,7 @@ public class DatabaseManager {
             return null;
         }
     }
+
 
     /**
      * method to query database table for tuple id from column value
@@ -167,9 +173,42 @@ public class DatabaseManager {
             if (!rs.next()) {
                 return -1;
             }
-            return rs.getInt(1);
+            return rs.getInt("id");
         } catch (SQLException e) {
             return -1;
+        }
+    }
+
+     /**
+     * method to query database for count of entries in database (table, column)
+     * @param table     target table
+     * @param column    target column
+     * @return          number of entries in column, table
+     */
+    public int get_count(String table, String column){
+        String s = "SELECT COUNT(" + column + ") FROM " + table;
+        try {
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(s);
+            return rs.getInt(1);
+        } catch(SQLException e){
+            throw new IllegalStateException(e.getMessage());
+        }
+    }
+
+    /**
+     * method to query database for count of entries in database table
+     * @param table     target table
+     * @return          number of entries in column, table
+     */
+    public int get_count(String table){
+        String s = "SELECT COUNT(*) FROM " + table;
+        try {
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(s);
+            return rs.getInt(1);
+        } catch(SQLException e){
+            throw new IllegalStateException(e.getMessage());
         }
     }
 
@@ -181,17 +220,15 @@ public class DatabaseManager {
      * @param value     // value to insert
      * @return
      */
-    public int update_value_from_id(String table, String column, int id, Object value){
+    public void update_value_from_id(String table, String column, int id, Object value){
         String s = "UPDATE " + table + " SET " + column + " = ? WHERE id = ?";
         try {
             PreparedStatement pstmt = conn.prepareStatement(s); // create PreparedStatement
             pstmt.setObject(1, value);           // set parameters
             pstmt.setInt(2, id);
-            return pstmt.executeUpdate();                              // execute
+            pstmt.executeUpdate();
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
-            e.printStackTrace();
-            return e.getErrorCode();
+            throw new IllegalStateException(e.getMessage());
         }
     }
 }
