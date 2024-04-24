@@ -37,15 +37,18 @@ public class LoginServlet extends HttpServlet {
         // if found, redirect to user profile page
         // else alert user that username or password is incorrect
 
-        if (user != null && Objects.equals(user.get_name(), username) && Objects.equals(user.get_password(), password)){
-            writer.println("<script type=\"text/javascript\">");
-            writer.println("location='home.jsp';");
-            writer.println("</script>");
+        if (user != null && Objects.equals(user.get_name(), username) && Objects.equals(user.get_password(), password)) {
+            // User is valid, create a session and store user details
+            HttpSession session = request.getSession(); // Create or retrieve existing session
+            session.setAttribute("user", user); // Store user object in session
+
+            // Redirect to user home page
+            response.sendRedirect("home.jsp"); // Redirection to home page
         } else {
-            // alert user that username or password is incorrect
+            // Username or password incorrect
             writer.println("<script type=\"text/javascript\">");
             writer.println("alert('Username or password incorrect');");
-            writer.println("location='login.jsp';");
+            writer.println("location='login.jsp';"); // Redirect back to the login page
             writer.println("</script>");
             writer.flush();
         }

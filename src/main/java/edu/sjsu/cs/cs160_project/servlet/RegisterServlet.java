@@ -43,6 +43,10 @@ public class RegisterServlet extends HttpServlet{
             // add user to database
             User newUser = new User(username, password, email, 0);
             u.save_user(newUser);
+
+            HttpSession session = request.getSession(); //creates session and stores user info
+            session.setAttribute("user", newUser);
+
             writer.println("<script type=\"text/javascript\">");
             writer.println("alert('Successfully registered');");
             writer.println("location='home.jsp';");
