@@ -1,15 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
   <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
   <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
+  <meta name="keywords" content=""/>
+  <meta name="description" content=""/>
+  <meta name="author" content=""/>
   <link rel="shortcut icon" href="images/shoppingcart.png" type="image/x-icon">
 
   <title>
@@ -17,63 +20,65 @@
   </title>
 
   <!-- slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
   <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet"/>
   <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet"/>
 </head>
 
 <body>
-  <div class="hero_area">
-    <!-- header section strats -->
-    <header class="header_section">
-      <nav class="navbar navbar-expand-lg custom_nav-container ">
-        <a class="navbar-brand" href="home.jsp">
+<div class="hero_area">
+  <!-- header section strats -->
+  <header class="header_section">
+    <nav class="navbar navbar-expand-lg custom_nav-container ">
+      <a class="navbar-brand" href="home.jsp">
           <span>
             OFS
           </span>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class=""></span>
-        </button>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class=""></span>
+      </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav  ">
-            <li class="nav-item active">
-              <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="shop.jsp">
-                Shop
-              </a>
-            </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="why.html">
-                Why Us
-              </a>
-            </li> -->
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="testimonial.html">
-                Testimonial
-              </a>
-            </li> -->
-            <li class="nav-item">
-              <a class="nav-link" href="contact.jsp">Contact Us</a>
-            </li>
-          </ul>
-          <div class="user_option">
-            <a href="login.jsp">
-              <i class="fa fa-user" aria-hidden="true"></i>
-              <span>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav  ">
+          <li class="nav-item active">
+            <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="shop.jsp">
+              Shop
+            </a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="why.html">
+              Why Us
+            </a>
+          </li> -->
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="testimonial.html">
+              Testimonial
+            </a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" href="contact.jsp">Contact Us</a>
+          </li>
+        </ul>
+        <div class="user_option">
+          <a href="login.jsp">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <span>
                 Login/Sign-up
               </span>
-            </a>
-            <!-- <a href="cart.html">
-              <i class="fa fa-shopping-bag" aria-hidden="true"></i>
-            </a> -->
+          </a>
+          <!-- <a href="cart.html">
+            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+          </a> -->
           <!-- shopping cart sidebar section  -->
           <nav id="main-nav">
             <a class="cart-button" href="#">
@@ -97,7 +102,8 @@
                       <span class="qty-price">
                         <span class="qty">
                           <button class="minus-button" id="minus-button-1">-</button>
-                          <input type="number" id="qty-input-1" class="qty-input" step="1" min="1" max="1000" name="qty-input" value="1" pattern="[0-9]*" title="Quantity" inputmode="numeric">
+                          <input type="number" id="qty-input-1" class="qty-input" step="1" min="1" max="1000"
+                                 name="qty-input" value="1" pattern="[0-9]*" title="Quantity" inputmode="numeric">
                           <button class="plus-button" id="plus-button-1">+</button>
                           <input type="hidden" name="item-price" id="item-price-1" value="12.00">
                         </span>
@@ -117,7 +123,8 @@
                       <span class="qty-price">
                         <span class="qty">
                           <button class="minus-button" id="minus-button-1">-</button>
-                          <input type="number" id="qty-input-2" class="qty-input" step="1" min="1" max="1000" name="qty-input" value="1" pattern="[0-9]*" title="Quantity" inputmode="numeric">
+                          <input type="number" id="qty-input-2" class="qty-input" step="1" min="1" max="1000"
+                                 name="qty-input" value="1" pattern="[0-9]*" title="Quantity" inputmode="numeric">
                           <button class="plus-button" id="plus-button-1">+</button>
                           <input type="hidden" name="item-price" id="item-price-2" value="12.00">
                         </span>
@@ -138,7 +145,8 @@
                         <span class="qty">
                           <form action="#" name="qty-form" id="qty-form-1">
                             <button class="minus-button" id="minus-button-1">-</button>
-                            <input type="number" id="qty-input-3" class="qty-input" step="1" min="1" max="1000" name="qty-input" value="1" pattern="[0-9]*" title="Quantity" inputmode="numeric">
+                            <input type="number" id="qty-input-3" class="qty-input" step="1" min="1" max="1000"
+                                   name="qty-input" value="1" pattern="[0-9]*" title="Quantity" inputmode="numeric">
                             <button class="plus-button" id="plus-button-1">+</button>
                             <input type="hidden" name="item-price" id="item-price-3" value="12.00">
                           </form>
@@ -163,407 +171,426 @@
           </aside>
           <div id="sidebar-cart-curtain"></div>
           <!-- end shopping cart sidebar section  -->
-            <form class="form-inline ">
-              <button class="btn nav_search-btn" type="submit">
-                <i class="fa fa-search" aria-hidden="true"></i>
-              </button>
-            </form>
-          </div>
-          <!-- shopping cart sidebar section  -->
-          <!-- <nav id="main-nav">
-            <a class="cart-button" href="#">
-              <span class="bag-count">3</span>
-              <span class="bag-icon">Bag</span>
-              <span class="bag-label">View Bag</span>
-            </a>
-          </nav>
-          <aside id="sidebar-cart">
-            <main>
-              <a href="#" class="close-button"><span class="close-icon">X</span></a>
-              <h2>Shopping Bag <span class="count">3</span></h2>
-              <ul class="products">
-                <li class="product">
-                  <a href="#" class="product-link">
-                    <span class="product-image">
-                      <img src="https://via.placeholder.com/75x50/ffffff/cccccc?text=PHOTO" alt="Product Photo">
+          <form class="form-inline ">
+            <button class="btn nav_search-btn" type="submit">
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+          </form>
+        </div>
+        <!-- shopping cart sidebar section  -->
+        <!-- <nav id="main-nav">
+          <a class="cart-button" href="#">
+            <span class="bag-count">3</span>
+            <span class="bag-icon">Bag</span>
+            <span class="bag-label">View Bag</span>
+          </a>
+        </nav>
+        <aside id="sidebar-cart">
+          <main>
+            <a href="#" class="close-button"><span class="close-icon">X</span></a>
+            <h2>Shopping Bag <span class="count">3</span></h2>
+            <ul class="products">
+              <li class="product">
+                <a href="#" class="product-link">
+                  <span class="product-image">
+                    <img src="https://via.placeholder.com/75x50/ffffff/cccccc?text=PHOTO" alt="Product Photo">
+                  </span>
+                  <span class="product-details">
+                    <h3>Very Cool Product One</h3>
+                    <span class="qty-price">
+                      <span class="qty">
+                        <button class="minus-button" id="minus-button-1">-</button>
+                        <input type="number" id="qty-input-1" class="qty-input" step="1" min="1" max="1000" name="qty-input" value="1" pattern="[0-9]*" title="Quantity" inputmode="numeric">
+                        <button class="plus-button" id="plus-button-1">+</button>
+                        <input type="hidden" name="item-price" id="item-price-1" value="12.00">
+                      </span>
+                      <span class="price">$16.00</span>
                     </span>
-                    <span class="product-details">
-                      <h3>Very Cool Product One</h3>
-                      <span class="qty-price">
-                        <span class="qty">
+                  </span>
+                </a>
+                <a href="#remove" class="remove-button"><span class="remove-icon">X</span></a>
+              </li>
+              <li class="product">
+                <a href="#" class="product-link">
+                  <span class="product-image">
+                    <img src="https://via.placeholder.com/75x50/ffffff/cccccc?text=PHOTO" alt="Product Photo">
+                  </span>
+                  <span class="product-details">
+                    <h3>Very Cool Product Two with Long Title</h3>
+                    <span class="qty-price">
+                      <span class="qty">
+                        <button class="minus-button" id="minus-button-1">-</button>
+                        <input type="number" id="qty-input-2" class="qty-input" step="1" min="1" max="1000" name="qty-input" value="1" pattern="[0-9]*" title="Quantity" inputmode="numeric">
+                        <button class="plus-button" id="plus-button-1">+</button>
+                        <input type="hidden" name="item-price" id="item-price-2" value="12.00">
+                      </span>
+                      <span class="price">$28.00</span>
+                    </span>
+                  </span>
+                </a>
+                <a href="#remove" class="remove-button"><span class="remove-icon">X</span></a>
+              </li>
+              <li class="product">
+                <a href="#" class="product-link">
+                  <span class="product-image">
+                    <img src="https://via.placeholder.com/75x50/ffffff/cccccc?text=PHOTO" alt="Product Photo">
+                  </span>
+                  <span class="product-details">
+                    <h3>Very Cool Product Three</h3>
+                    <span class="qty-price">
+                      <span class="qty">
+                        <form action="#" name="qty-form" id="qty-form-1">
                           <button class="minus-button" id="minus-button-1">-</button>
-                          <input type="number" id="qty-input-1" class="qty-input" step="1" min="1" max="1000" name="qty-input" value="1" pattern="[0-9]*" title="Quantity" inputmode="numeric">
+                          <input type="number" id="qty-input-3" class="qty-input" step="1" min="1" max="1000" name="qty-input" value="1" pattern="[0-9]*" title="Quantity" inputmode="numeric">
                           <button class="plus-button" id="plus-button-1">+</button>
-                          <input type="hidden" name="item-price" id="item-price-1" value="12.00">
-                        </span>
-                        <span class="price">$16.00</span>
+                          <input type="hidden" name="item-price" id="item-price-3" value="12.00">
+                        </form>
                       </span>
+                      <span class="price">$12.00</span>
                     </span>
-                  </a>
-                  <a href="#remove" class="remove-button"><span class="remove-icon">X</span></a>
-                </li>
-                <li class="product">
-                  <a href="#" class="product-link">
-                    <span class="product-image">
-                      <img src="https://via.placeholder.com/75x50/ffffff/cccccc?text=PHOTO" alt="Product Photo">
-                    </span>
-                    <span class="product-details">
-                      <h3>Very Cool Product Two with Long Title</h3>
-                      <span class="qty-price">
-                        <span class="qty">
-                          <button class="minus-button" id="minus-button-1">-</button>
-                          <input type="number" id="qty-input-2" class="qty-input" step="1" min="1" max="1000" name="qty-input" value="1" pattern="[0-9]*" title="Quantity" inputmode="numeric">
-                          <button class="plus-button" id="plus-button-1">+</button>
-                          <input type="hidden" name="item-price" id="item-price-2" value="12.00">
-                        </span>
-                        <span class="price">$28.00</span>
-                      </span>
-                    </span>
-                  </a>
-                  <a href="#remove" class="remove-button"><span class="remove-icon">X</span></a>
-                </li>
-                <li class="product">
-                  <a href="#" class="product-link">
-                    <span class="product-image">
-                      <img src="https://via.placeholder.com/75x50/ffffff/cccccc?text=PHOTO" alt="Product Photo">
-                    </span>
-                    <span class="product-details">
-                      <h3>Very Cool Product Three</h3>
-                      <span class="qty-price">
-                        <span class="qty">
-                          <form action="#" name="qty-form" id="qty-form-1">
-                            <button class="minus-button" id="minus-button-1">-</button>
-                            <input type="number" id="qty-input-3" class="qty-input" step="1" min="1" max="1000" name="qty-input" value="1" pattern="[0-9]*" title="Quantity" inputmode="numeric">
-                            <button class="plus-button" id="plus-button-1">+</button>
-                            <input type="hidden" name="item-price" id="item-price-3" value="12.00">
-                          </form>
-                        </span>
-                        <span class="price">$12.00</span>
-                      </span>
-                    </span>
-                  </a>
-                  <a href="#remove" class="remove-button"><span class="remove-icon">X</span></a>
-                </li>
-              </ul>
-              <div class="totals">
-                <div class="subtotal">
-                  <span class="label">Subtotal:</span> <span class="amount">$54.00</span>
-                </div>
+                  </span>
+                </a>
+                <a href="#remove" class="remove-button"><span class="remove-icon">X</span></a>
+              </li>
+            </ul>
+            <div class="totals">
+              <div class="subtotal">
+                <span class="label">Subtotal:</span> <span class="amount">$54.00</span>
               </div>
-              <div class="action-buttons">
-                <a class="view-cart-button" href="#">Cart</a><a class="checkout-button" href="#">Checkout</a>
-              </div>
-            </main>
-          </aside>
-          <div id="sidebar-cart-curtain"></div> -->
-          <!-- end shopping cart sidebar section  -->
-        </div>
-        
-      </nav>
-    </header>
-    <!-- end header section -->
-    <!-- slider section -->
+            </div>
+            <div class="action-buttons">
+              <a class="view-cart-button" href="#">Cart</a><a class="checkout-button" href="#">Checkout</a>
+            </div>
+          </main>
+        </aside>
+        <div id="sidebar-cart-curtain"></div> -->
+        <!-- end shopping cart sidebar section  -->
+      </div>
 
-    <section class="slider_section">
-      <div class="slider_container">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="container-fluid">
-                <div class="row">
-                  <div class="col-md-7">
-                    <div class="detail-box">
-                      <h1>
-                        Welcome To OFS<br>
-                        <!-- OFS -->
-                      </h1>
-                      <p>
-                        Organic Food Online
-                      </p>
-                      <a href="shop.jsp">
-                        Shop
-                      </a>
-                    </div>
-                  </div>
-                  <div class="col-md-5 ">
-                    <div class="img-box">
-                      <!-- <img src="images/slider-img.png" alt="" /> -->
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item ">
-              <div class="container-fluid">
-                <div class="row">
-                  <div class="col-md-7">
-                    <div class="detail-box">
-                      <h1>
-                        Welcome To OFS <br>
-                      </h1>
-                      <p>
-                        Organic Food Online
-                      </p>
-                      <a href="shop.jsp">
-                        Shop
-                      </a>
-                    </div>
-                  </div>
-                  <div class="col-md-5 ">
-                    <div class="img-box">
-                      <!-- <img src="images/slider-img.png" alt="" /> -->
-                    </div>
+    </nav>
+  </header>
+  <!-- end header section -->
+  <!-- slider section -->
+
+  <section class="slider_section">
+    <div class="slider_container">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-7">
+                  <div class="detail-box">
+                    <h1>
+                      Welcome To OFS<br>
+                      <!-- OFS -->
+                    </h1>
+                    <p>
+                      Organic Food Online
+                    </p>
+                    <a href="shop.jsp">
+                      Shop
+                    </a>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="carousel-item ">
-              <div class="container-fluid">
-                <div class="row">
-                  <div class="col-md-7">
-                    <div class="detail-box">
-                      <h1>
-                        Welcome To OFS <br>
-                      </h1>
-                      <p>
-                        Organic Food Online
-                      </p>
-                      <a href="">
-                        Shop
-                      </a>
-                    </div>
-                  </div>
-                  <div class="col-md-5 ">
-                    <div class="img-box">
-                      <!-- <img src="images/slider-img.png" alt="" /> -->
-                    </div>
+                <div class="col-md-5 ">
+                  <div class="img-box">
+                    <!-- <img src="images/slider-img.png" alt="" /> -->
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="carousel_btn-box">
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-              <i class="fa fa-arrow-left" aria-hidden="true"></i>
-              <span class="sr-only">Previous</span>
-            </a>
-            <img src="images/line.png" alt="" />
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-              <i class="fa fa-arrow-right" aria-hidden="true"></i>
-              <span class="sr-only">Next</span>
-            </a>
+          <div class="carousel-item ">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-7">
+                  <div class="detail-box">
+                    <h1>
+                      Welcome To OFS <br>
+                    </h1>
+                    <p>
+                      Organic Food Online
+                    </p>
+                    <a href="shop.jsp">
+                      Shop
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-5 ">
+                  <div class="img-box">
+                    <!-- <img src="images/slider-img.png" alt="" /> -->
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+          <div class="carousel-item ">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-7">
+                  <div class="detail-box">
+                    <h1>
+                      Welcome To OFS <br>
+                    </h1>
+                    <p>
+                      Organic Food Online
+                    </p>
+                    <a href="">
+                      Shop
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-5 ">
+                  <div class="img-box">
+                    <!-- <img src="images/slider-img.png" alt="" /> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel_btn-box">
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            <span class="sr-only">Previous</span>
+          </a>
+          <img src="images/line.png" alt=""/>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- end slider section -->
-  </div>
-  <!-- end hero area -->
+  <!-- end slider section -->
+</div>
+<!-- end hero area -->
 
-  <!-- shop section -->
+<!-- shop section -->
 
-  <section class="shop_section layout_padding">
-    <div class="container">
-      <div class="heading_container heading_center">
-        <h2>
-          Our Produce
-        </h2>
+<section class="shop_section layout_padding">
+  <div class="container">
+    <div class="heading_container heading_center">
+      <h2>
+        Our Produce
+      </h2>
+<%--      <c:out value="${'Example of c:out for Output'}"/>--%>
+      <div class="row mb-5">
+        <jsp:useBean id=""${product_list}" ="edu.sjsu.cs.cs160_project.controller.ItemManager"/>
+        <c:forEach items="${product_list}" var="o">
+          <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
+            <div class="block-4 text-center border" style="height: 100%">
+              <figure class="block-4-image">
+                <a href="product-detail?id=${o.id}">
+                  <img src="data:image/jpg;base64,${o.base64Image}" alt="Image placeholder"
+                       class="img-fluid" style="height: 100%">
+                </a>
+              </figure>
+              <div class="block-4-text p-4">
+                <h3><a href="product-detail?id=${o.id}">${o.name}</a></h3>
+                <p class="mb-0">${o.price}</p>
+              </div>
+            </div>
+          </div>
+        </c:forEach>
       </div>
-      <div class="row">
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box">
-            <a href="product.jsp">
-              <div class="img-box">
-                <img src="images/banana.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Bananas
-                </h6>
-                <h6>
-                  <span>
-                    $2.29
-                  </span>
-                </h6>
-              </div>
-              <div class="new">
-                <span>
-                  3LB
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box">
-            <a href="product.jsp">
-              <div class="img-box">
-                <img src="images/avocado.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Avocado
-                </h6>
-                <h6>
-                  <span>
-                    $1.59
-                  </span>
-                </h6>
-              </div>
-              <div class="new">
-                <span>
-                  1 Ct
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box">
-            <a href="product.jsp">
-              <div class="img-box">
-                <img src="images/strawberries.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Strawberries 
-                </h6>
-                <h6>
-                  <span>
-                    $4.99
-                  </span>
-                </h6>
-              </div>
-              <div class="new">
-                <span>
-                  1LB
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box">
-            <a href="product.jsp">
-              <div class="img-box">
-                <img src="images/wheatbread.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Wheat Bread
-                </h6>
-                <h6>
-                  <span>
-                    $3.99
-                  </span>
-                </h6>
-              </div>
-              <div class="new">
-                <span>
-                  1 Ct
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box">
-            <a href="product.jsp">
-              <div class="img-box">
-                <img src="images/broccoli.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Broccoli
-                </h6>
-                <h6>
-                  <span>
-                    $3.49
-                  </span>
-                </h6>
-              </div>
-              <div class="new">
-                <span>
-                  1LB
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box">
-            <a href="product.jsp">
-              <div class="img-box">
-                <img src="images/greenbeans.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Green Beans
-                </h6>
-                <h6>
-                  <span>
-                    $2.99
-                  </span>
-                </h6>
-              </div>
-              <div class="new">
-                <span>
-                  1LB
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box">
-            <a href="product.jsp">
-              <div class="img-box">
-                <img src="images/shitake.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Shitake Mushrooms
-                </h6>
-                <h6>
-                  <span>
-                    $9.99
-                  </span>
-                </h6>
-              </div>
-              <div class="new">
-                <span>
-                  1LB
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box">
-            <a href="product.jsp">
-              <div class="img-box">
-                <img src="images/lettuce.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Lettuce
-                </h6>
-                <h6>
-                  <span>
-                    $1.79
-                  </span>
-                </h6>
-              </div>
-              <div class="new">
-                <span>
-                  1 Ct
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
+<%--      <div class="row">--%>
+<%--        <div class="col-sm-6 col-md-4 col-lg-3">--%>
+<%--          <div class="box">--%>
+<%--            <a href="product.jsp">--%>
+<%--              <div class="img-box">--%>
+<%--                <img src="images/banana.png" alt="">--%>
+<%--              </div>--%>
+<%--              <div class="detail-box">--%>
+<%--                <h6>--%>
+<%--                  Bananas--%>
+<%--                </h6>--%>
+<%--                <h6>--%>
+<%--                  <span>--%>
+<%--                    $2.29--%>
+<%--                  </span>--%>
+<%--                </h6>--%>
+<%--              </div>--%>
+<%--              <div class="new">--%>
+<%--                <span>--%>
+<%--                  3LB--%>
+<%--                </span>--%>
+<%--              </div>--%>
+<%--            </a>--%>
+<%--          </div>--%>
+<%--        </div>--%>
+<%--        <div class="col-sm-6 col-md-4 col-lg-3">--%>
+<%--          <div class="box">--%>
+<%--            <a href="product.jsp">--%>
+<%--              <div class="img-box">--%>
+<%--                <img src="images/avocado.png" alt="">--%>
+<%--              </div>--%>
+<%--              <div class="detail-box">--%>
+<%--                <h6>--%>
+<%--                  Avocado--%>
+<%--                </h6>--%>
+<%--                <h6>--%>
+<%--                  <span>--%>
+<%--                    $1.59--%>
+<%--                  </span>--%>
+<%--                </h6>--%>
+<%--              </div>--%>
+<%--              <div class="new">--%>
+<%--                <span>--%>
+<%--                  1 Ct--%>
+<%--                </span>--%>
+<%--              </div>--%>
+<%--            </a>--%>
+<%--          </div>--%>
+<%--        </div>--%>
+<%--        <div class="col-sm-6 col-md-4 col-lg-3">--%>
+<%--          <div class="box">--%>
+<%--            <a href="product.jsp">--%>
+<%--              <div class="img-box">--%>
+<%--                <img src="images/strawberries.png" alt="">--%>
+<%--              </div>--%>
+<%--              <div class="detail-box">--%>
+<%--                <h6>--%>
+<%--                  Strawberries --%>
+<%--                </h6>--%>
+<%--                <h6>--%>
+<%--                  <span>--%>
+<%--                    $4.99--%>
+<%--                  </span>--%>
+<%--                </h6>--%>
+<%--              </div>--%>
+<%--              <div class="new">--%>
+<%--                <span>--%>
+<%--                  1LB--%>
+<%--                </span>--%>
+<%--              </div>--%>
+<%--            </a>--%>
+<%--          </div>--%>
+<%--        </div>--%>
+<%--        <div class="col-sm-6 col-md-4 col-lg-3">--%>
+<%--          <div class="box">--%>
+<%--            <a href="product.jsp">--%>
+<%--              <div class="img-box">--%>
+<%--                <img src="images/wheatbread.png" alt="">--%>
+<%--              </div>--%>
+<%--              <div class="detail-box">--%>
+<%--                <h6>--%>
+<%--                  Wheat Bread--%>
+<%--                </h6>--%>
+<%--                <h6>--%>
+<%--                  <span>--%>
+<%--                    $3.99--%>
+<%--                  </span>--%>
+<%--                </h6>--%>
+<%--              </div>--%>
+<%--              <div class="new">--%>
+<%--                <span>--%>
+<%--                  1 Ct--%>
+<%--                </span>--%>
+<%--              </div>--%>
+<%--            </a>--%>
+<%--          </div>--%>
+<%--        </div>--%>
+<%--        <div class="col-sm-6 col-md-4 col-lg-3">--%>
+<%--          <div class="box">--%>
+<%--            <a href="product.jsp">--%>
+<%--              <div class="img-box">--%>
+<%--                <img src="images/broccoli.png" alt="">--%>
+<%--              </div>--%>
+<%--              <div class="detail-box">--%>
+<%--                <h6>--%>
+<%--                  Broccoli--%>
+<%--                </h6>--%>
+<%--                <h6>--%>
+<%--                  <span>--%>
+<%--                    $3.49--%>
+<%--                  </span>--%>
+<%--                </h6>--%>
+<%--              </div>--%>
+<%--              <div class="new">--%>
+<%--                <span>--%>
+<%--                  1LB--%>
+<%--                </span>--%>
+<%--              </div>--%>
+<%--            </a>--%>
+<%--          </div>--%>
+<%--        </div>--%>
+<%--        <div class="col-sm-6 col-md-4 col-lg-3">--%>
+<%--          <div class="box">--%>
+<%--            <a href="product.jsp">--%>
+<%--              <div class="img-box">--%>
+<%--                <img src="images/greenbeans.png" alt="">--%>
+<%--              </div>--%>
+<%--              <div class="detail-box">--%>
+<%--                <h6>--%>
+<%--                  Green Beans--%>
+<%--                </h6>--%>
+<%--                <h6>--%>
+<%--                  <span>--%>
+<%--                    $2.99--%>
+<%--                  </span>--%>
+<%--                </h6>--%>
+<%--              </div>--%>
+<%--              <div class="new">--%>
+<%--                <span>--%>
+<%--                  1LB--%>
+<%--                </span>--%>
+<%--              </div>--%>
+<%--            </a>--%>
+<%--          </div>--%>
+<%--        </div>--%>
+<%--        <div class="col-sm-6 col-md-4 col-lg-3">--%>
+<%--          <div class="box">--%>
+<%--            <a href="product.jsp">--%>
+<%--              <div class="img-box">--%>
+<%--                <img src="images/shitake.png" alt="">--%>
+<%--              </div>--%>
+<%--              <div class="detail-box">--%>
+<%--                <h6>--%>
+<%--                  Shitake Mushrooms--%>
+<%--                </h6>--%>
+<%--                <h6>--%>
+<%--                  <span>--%>
+<%--                    $9.99--%>
+<%--                  </span>--%>
+<%--                </h6>--%>
+<%--              </div>--%>
+<%--              <div class="new">--%>
+<%--                <span>--%>
+<%--                  1LB--%>
+<%--                </span>--%>
+<%--              </div>--%>
+<%--            </a>--%>
+<%--          </div>--%>
+<%--        </div>--%>
+<%--        <div class="col-sm-6 col-md-4 col-lg-3">--%>
+<%--          <div class="box">--%>
+<%--            <a href="product.jsp">--%>
+<%--              <div class="img-box">--%>
+<%--                <img src="images/lettuce.png" alt="">--%>
+<%--              </div>--%>
+<%--              <div class="detail-box">--%>
+<%--                <h6>--%>
+<%--                  Lettuce--%>
+<%--                </h6>--%>
+<%--                <h6>--%>
+<%--                  <span>--%>
+<%--                    $1.79--%>
+<%--                  </span>--%>
+<%--                </h6>--%>
+<%--              </div>--%>
+<%--              <div class="new">--%>
+<%--                <span>--%>
+<%--                  1 Ct--%>
+<%--                </span>--%>
+<%--              </div>--%>
+<%--            </a>--%>
+<%--          </div>--%>
+<%--        </div>--%>
+<%--      </div>--%>
       <div class="btn-box">
         <a href="">
           View More
