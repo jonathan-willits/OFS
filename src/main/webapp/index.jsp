@@ -1,333 +1,106 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<% response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); %>
+
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OFS - Register</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: "poppins", sans-serif;
-            background-color: #f8f9fa;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            margin: 0;
-        }
-
-        .container {
-            margin-top: 100px;
-        }
-
-        .card {
-            border: none;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .card-header {
-            background-color: #8fbc8f;
-            color: #ffffff;
-            text-align: center;
-            border-bottom: none;
-            border-radius: 10px 10px 0 0;
-        }
-
-        .card-body {
-            padding: 30px;
-        }
-
-        .card-footer{
-          background-color: #8fbc8f;
-          text-align: center;
-          border: none;
-          height: 60px;
-      }
-
-        .btn-success {
-            background-color: #28a745;
-            border: none;
-
-        }
-
-        .btn-success:hover {
-            border-radius: 1px;
-            background-color: transparent;
-            border: 1px solid #228b22;
-            color: #228b22;
-        }
-
-        main {
-            flex: 1;
-        }
-
-        footer {
-            background-color: #343a40;
-            color: #ffffff;
-            text-align: center;
-            padding: 10px;
-        }
-
-         /* Style all input fields */
-        input {
-        width: 100%;
-        padding: 12px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-        margin-top: 6px;
-        margin-bottom: 16px;
-        }
-
-        /* Style the submit button */
-        input[type=submit] {
-        background-color: #04AA6D;
-        color: white;
-        }
-
-        /* Style the container for inputs */
-        /* .container {
-        background-color: #f1f1f1;
-        padding: 20px;
-        } */
-
-        /* The message box is shown when the user clicks on the password field */
-        #message {
-        display:none;
-        background: #f1f1f1;
-        color: #000;
-        position: relative;
-        padding: 20px;
-        margin-top: 10px;
-        }
-
-        #message p {
-        padding: 10px 35px;
-        font-size: 16px;
-        }
-
-        /* Add a green text color and a checkmark when the requirements are right */
-        .valid {
-        color: green;
-        }
-
-        .valid:before {
-        position: relative;
-        left: -35px;
-        /* content: "&#10004;"; */
-        content: "✔";
-
-        }
-
-        /* Add a red text color and an "x" icon when the requirements are wrong */
-        .invalid {
-        color: red;
-        }
-
-        .invalid:before {
-        position: relative;
-        left: -35px;
-        /* content: "&#10006;"; */
-        content: "✖";
-        } 
-    </style>
-    <!-- Custom styles for this template -->
-    <!-- <link href="css/style.css" rel="stylesheet" /> -->
-</head>
+<jsp:include page="templates/head.jsp"/>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">OFS</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="home.jsp">Home</a>
-                    </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="login.jsp">Profile</a>
-                    </li> -->
-                </ul>
-            </div>
-        </nav>
-    </header>
-    <!-- <header class="header_section">
-        <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="home.jsp">
-            <span>
-              OFS
-            </span>
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class=""></span>
-          </button>
-  
-          <div class="collapse navbar-collapse innerpage_navbar" id="navbarSupportedContent">
-            <ul class="navbar-nav  ">
-              <li class="nav-item ">
-                <a class="nav-link" href="home.jsp">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="shop.jsp">
-                  Shop
-                </a>
+<div class="site-wrap">
+    <jsp:include page="templates/header.jsp"/>
 
-              <li class="nav-item">
-                <a class="nav-link" href="contact.jsp">Contact Us</a>
-              </li>
-            </ul>
-            <div class="user_option">
-              <a href="">
-                <i class="fa fa-user" aria-hidden="true"></i>
-                <span>
-                  Login
-                </span>
-              </a> -->
-              <!-- <a href="">
-                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
-              </a>
-              
-              <form class="form-inline ">
-                <button class="btn nav_search-btn" type="submit">
-                  <i class="fa fa-search" aria-hidden="true"></i>
-                </button>
-              </form>
-            </div>
-          </div>
-        </nav>
-      </header> -->
-
-    <main>
+    <div class="site-blocks-cover" style="background-image: url(static/images/hero_1.jpg);" data-aos="fade">
         <div class="container">
-            <div class="col-md-6 offset-md-3">
-                <div class="card">
-                    <div class="card-header">
-                        <h2>OFS - Register</h2>
+            <div class="row align-items-start align-items-md-center justify-content-end">
+                <div class="col-md-5 text-center text-md-left pt-5 pt-md-0">
+                    <h1 class="mb-2">Finding Your Perfect Shoes</h1>
+
+                    <div class="intro-text text-center text-md-left">
+                        <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis
+                            quam. Integer accumsan tincidunt fringilla.
+                        </p>
+
+                        <p>
+                            <a href="shop" class="btn btn-sm btn-primary">Shop Now</a>
+                        </p>
                     </div>
-                    <div class="card-body">
-                        <!-- <form method="post" onsubmit="return showSuccessMessage()"> -->
-                          <form name="RegisterServlet" method="POST" action="registerServlet">
-                            <div class="form-group">
-                                <label for="email">Email Address:</label>
-                                <input type="email" class="form-control" name="email" id="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="username">Username:</label>
-                                <input type="text" class="form-control" name="username" id="username" required>
-                            </div>
-                            <div class="form-groupo">
-                                <label for="password">Password:</label>
-                                <!-- <input type="password" class="form-control" name="password" id="password" required> -->
-                                <input type="password" class="form-control" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="confirmPassword">Confirm Password:</label>
-                                <input type="password" class="form-control" name="confirmPassword" id="confirmPassword"
-                                    required>
-                            </div>
-                            <button type="submit" class="btn btn-success btn-block">Register</button>
-                        </form>
-                        <div id="success-message" class="alert alert-success d-none" role="alert">
-                            Congrats, your account has been made!
-                            <a href="question.jsp" title="Go to question page">Go to question page</a>
-                        </div>
-                        <div id="message">
-                            <p>Password must contain the following:</p>
-                            <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
-                            <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
-                            <p id="number" class="invalid">A <b>number</b></p>
-                            <p id="length" class="invalid">Minimum <b>8 characters</b></p>
-                          </div>
-                        <div class="mt-3">
-                            <p class="text-center">Already have an account? <a href="login.jsp">Login</a></p>
-                        </div>
-                    </div>
-                    <div class="card-footer"></div>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
 
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2024 OFS. All rights reserved.</p>
-    </footer>
+    <div class="site-section site-section-sm site-blocks-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="">
+                    <div class="icon mr-4 align-self-start">
+                        <span class="icon-truck"></span>
+                    </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        function showSuccessMessage() {
-            // Display the success message
-            var successMessage = document.getElementById('success-message');
-            successMessage.classList.remove('d-none');
+                    <div class="text">
+                        <h2 class="text-uppercase">Free Shipping</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer
+                            accumsan tincidunt fringilla.</p>
+                    </div>
+                </div>
 
-            // Prevent the form from submitting
-            return false;
-        }
-    </script>
-    <script>
-        var myInput = document.getElementById("psw");
-        var letter = document.getElementById("letter");
-        var capital = document.getElementById("capital");
-        var number = document.getElementById("number");
-        var length = document.getElementById("length");
-        
-        // When the user clicks on the password field, show the message box
-        myInput.onfocus = function() {
-          document.getElementById("message").style.display = "block";
-        }
-        
-        // When the user clicks outside of the password field, hide the message box
-        myInput.onblur = function() {
-          document.getElementById("message").style.display = "none";
-        }
-        
-        // When the user starts to type something inside the password field
-        myInput.onkeyup = function() {
-          // Validate lowercase letters
-          var lowerCaseLetters = /[a-z]/g;
-          if(myInput.value.match(lowerCaseLetters)) {
-            letter.classList.remove("invalid");
-            letter.classList.add("valid");
-          } else {
-            letter.classList.remove("valid");
-            letter.classList.add("invalid");
-        }
-        
-          // Validate capital letters
-          var upperCaseLetters = /[A-Z]/g;
-          if(myInput.value.match(upperCaseLetters)) {
-            capital.classList.remove("invalid");
-            capital.classList.add("valid");
-          } else {
-            capital.classList.remove("valid");
-            capital.classList.add("invalid");
-          }
-        
-          // Validate numbers
-          var numbers = /[0-9]/g;
-          if(myInput.value.match(numbers)) {
-            number.classList.remove("invalid");
-            number.classList.add("valid");
-          } else {
-            number.classList.remove("valid");
-            number.classList.add("invalid");
-          }
-        
-          // Validate length
-          if(myInput.value.length >= 8) {
-            length.classList.remove("invalid");
-            length.classList.add("valid");
-          } else {
-            length.classList.remove("valid");
-            length.classList.add("invalid");
-          }
-        }
-        </script>
+                <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon mr-4 align-self-start">
+                        <span class="icon-refresh2"></span>
+                    </div>
+                    <div class="text">
+                        <h2 class="text-uppercase">Free Returns</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer
+                            accumsan tincidunt fringilla.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon mr-4 align-self-start">
+                        <span class="icon-help"></span>
+                    </div>
+                    <div class="text">
+                        <h2 class="text-uppercase">Customer Support</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer
+                            accumsan tincidunt fringilla.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <jsp:include page="templates/collections-section.jsp"/>
+
+    <jsp:include page="templates/featured-products.jsp"/>
+
+    <div class="site-section block-8">
+        <div class="container">
+            <div class="row justify-content-center  mb-5">
+                <div class="col-md-7 site-section-heading text-center pt-4">
+                    <h2>Big Sale!</h2>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-md-12 col-lg-7 mb-5">
+                    <a href="#"><img src="static/images/blog_1.jpg" alt="Image placeholder"
+                                     class="img-fluid rounded"></a>
+                </div>
+                <div class="col-md-12 col-lg-5 text-center pl-md-5">
+                    <h2><a href="#">50% less in all items</a></h2>
+                    <p class="post-meta mb-4">By <a href="#">Carl Smith</a> <span class="block-8-sep">&bullet;</span>
+                        September 3, 2018</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam iste dolor accusantium facere
+                        corporis ipsum animi deleniti fugiat. Ex, veniam?</p>
+                    <p><a href="shop" class="btn btn-primary btn-sm">Shop Now</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <jsp:include page="templates/footer.jsp"/>
+</div>
+
+<jsp:include page="templates/scripts.jsp"/>
 </body>
 </html>
