@@ -9,7 +9,9 @@
                 <div class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left">
                     <form action="search" method="get" class="site-block-top-search">
                         <span class="icon icon-search2"></span>
-                        <input name="keyword" type="text" class="form-control border-0" placeholder="Search">
+                        <label>
+                            <input name="keyword" type="text" class="form-control border-0" placeholder="Search">
+                        </label>
                     </form>
                 </div>
 
