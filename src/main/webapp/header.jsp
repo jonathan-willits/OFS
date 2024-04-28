@@ -17,7 +17,7 @@
 
                 <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
                     <div class="site-logo">
-                        <a href="/" class="js-logo-clone">Shoppers</a>
+                        <a href="index.jsp" class="js-logo-clone">Shoppers</a>
                     </div>
                 </div>
 
@@ -34,7 +34,7 @@
                                     </c:if>
 
                                     <c:if test="${account.base64Image == null}">
-                                        <img class="icon" src="static/images/blank_avatar.png"
+                                        <img class="icon" src="images/blank_avatar.png"
                                              id="dropdownMenuReference"
                                              data-toggle="dropdown" alt="image"
                                              style="width: 1.5em; border-radius: 50%; margin-right: 10px; margin-bottom: 10px">
@@ -76,7 +76,7 @@
     <nav class="site-navigation text-right text-md-center" role="navigation">
         <div class="container">
             <ul class="site-menu js-clone-nav d-none d-md-block" style="padding: 0">
-                <li class="${home_active}"><a href="/">Home</a></li>
+                <li class="${home_active}"><a href="index.jsp">Home</a></li>
                 <li class="${about_active}"><a href="about.jsp">About</a></li>
                 <li class="${shop_active}"><a href="shop">Shop</a></li>
                 <li class="${contact_active}"><a href="contact.jsp">Contact</a></li>
