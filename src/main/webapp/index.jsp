@@ -4,11 +4,11 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<jsp:include page="templates/head.jsp"/>
+<jsp:include page="head.jsp"/>
 
 <body>
 <div class="site-wrap">
-    <jsp:include page="templates/header.jsp"/>
+    <jsp:include page="header.jsp"/>
 
     <div class="site-blocks-cover" style="background-image: url(static/images/hero_1.jpg);" data-aos="fade">
         <div class="container">
@@ -70,9 +70,9 @@
         </div>
     </div>
 
-    <jsp:include page="templates/collections-section.jsp"/>
+    <jsp:include page="collections-section.jsp"/>
 
-    <jsp:include page="templates/featured-products.jsp"/>
+    <jsp:include page="featured-products.jsp"/>
 
     <div class="site-section block-8">
         <div class="container">
@@ -98,9 +98,9 @@
         </div>
     </div>
 
-    <jsp:include page="templates/footer.jsp"/>
+    <jsp:include page="footer.jsp"/>
 </div>
 
-<jsp:include page="templates/scripts.jsp"/>
+<jsp:include page="scripts.jsp"/>
 </body>
 </html>

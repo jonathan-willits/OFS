@@ -4,11 +4,11 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<jsp:include page="templates/head.jsp"/>
+<jsp:include page="head.jsp"/>
 
 <body>
 <div class="site-wrap">
-    <jsp:include page="templates/header.jsp"/>
+    <jsp:include page="header.jsp"/>
 
     <div class="bg-light py-3">
         <div class="container">
@@ -129,7 +129,7 @@
         </div>
     </div>
 
-    <jsp:include page="templates/footer.jsp"/>
+    <jsp:include page="footer.jsp"/>
 </div>
 
 
@@ -141,6 +141,6 @@
         }
     }
 </script>
-<jsp:include page="templates/scripts.jsp"/>
+<jsp:include page="scripts.jsp"/>
 </body>
 </html>
