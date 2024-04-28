@@ -17,7 +17,7 @@
 
                 <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
                     <div class="site-logo">
-                        <a href="index.jsp" class="js-logo-clone">Shoppers</a>
+                        <a href="index.jsp" class="js-logo-clone">OFS</a>
                     </div>
                 </div>
 
@@ -42,7 +42,7 @@
 
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
                                         <a class="dropdown-item" href="profile-page">Your profile</a>
-                                        <a class="dropdown-item" href="logout">Logout</a>
+                                        <a class="dropdown-item" href="">Logout</a>
                                     </div>
                                 </li>
                             </c:if>

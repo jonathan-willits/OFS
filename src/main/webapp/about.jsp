@@ -41,13 +41,7 @@
                     <div class="site-section-heading pt-3 mb-4">
                         <h2 class="text-black">How We Started</h2>
                     </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius repellat, dicta at laboriosam,
-                        nemo exercitationem itaque eveniet architecto cumque, deleniti commodi molestias repellendus
-                        quos sequi hic fugiat asperiores illum. Atque, in, fuga excepturi corrupti error corporis
-                        aliquam unde nostrum quas.</p>
-                    <p>Accusantium dolor ratione maiores est deleniti nihil? Dignissimos est, sunt nulla illum autem in,
-                        quibusdam cumque recusandae, laudantium minima repellendus.</p>
-
+                    <p>This CS 160 Project at San Jose State University was a requirement, and we completed in order to graduate.</p>
                 </div>
             </div>
         </div>
@@ -57,7 +51,7 @@
         <div class="container">
             <div class="row justify-content-center mb-5">
                 <div class="col-md-7 site-section-heading text-center pt-4">
-                    <h2>The Team</h2>
+                    <h2>Team 3</h2>
                 </div>
             </div>
             <div class="row">
@@ -67,7 +61,7 @@
                         <div class="block-38-img">
                             <div class="block-38-header">
                                 <img src="images/person_1.jpg" alt="Image placeholder" class="mb-4">
-                                <h3 class="block-38-heading h4">Elizabeth Graham</h3>
+                                <h3 class="block-38-heading h4">Osayame Erinmwingbovo</h3>
                                 <p class="block-38-subheading">CEO/Co-Founder</p>
                             </div>
                             <div class="block-38-body">
@@ -82,7 +76,7 @@
                         <div class="block-38-img">
                             <div class="block-38-header">
                                 <img src="images/person_2.jpg" alt="Image placeholder" class="mb-4">
-                                <h3 class="block-38-heading h4">Jennifer Greive</h3>
+                                <h3 class="block-38-heading h4">Annie Luu</h3>
                                 <p class="block-38-subheading">Co-Founder</p>
                             </div>
                             <div class="block-38-body">
@@ -97,7 +91,7 @@
                         <div class="block-38-img">
                             <div class="block-38-header">
                                 <img src="images/person_3.jpg" alt="Image placeholder" class="mb-4">
-                                <h3 class="block-38-heading h4">Patrick Marx</h3>
+                                <h3 class="block-38-heading h4">Charlie Nguyen</h3>
                                 <p class="block-38-subheading">Marketing</p>
                             </div>
                             <div class="block-38-body">
@@ -112,7 +106,7 @@
                         <div class="block-38-img">
                             <div class="block-38-header">
                                 <img src="images/person_4.jpg" alt="Image placeholder" class="mb-4">
-                                <h3 class="block-38-heading h4">Mike Coolbert</h3>
+                                <h3 class="block-38-heading h4">Jonathan Willits</h3>
                                 <p class="block-38-subheading">Sales Manager</p>
                             </div>
                             <div class="block-38-body">
