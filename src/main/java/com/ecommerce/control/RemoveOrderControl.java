@@ -13,7 +13,7 @@ public class RemoveOrderControl extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Get the id of the order that need to remove from request.
-        int orderId = Integer.parseInt(request.getParameter("product-id"));
+        int orderId = Integer.parseInt(request.getParameter("order-id"));
         // Remove order from database.
         OrderDao orderDao = new OrderDao();
         Order order = orderDao.getOrder(orderId);

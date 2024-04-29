@@ -158,10 +158,10 @@ public class OrderDao {
         return list;
     }
 
-    // Method to get a order by its id from database.
+    // Method to get an order by its id from database.
     public Order getOrder(int orderId) {
         Order order = new Order();
-        String query = "SELECT * FROM order WHERE order_id = " + orderId;
+        String query = "SELECT * FROM `order` WHERE order_id = " + orderId;
         try {
             Class.forName("com.mysql.jdbc.Driver");
             connection = new Database().getConnection();
@@ -179,12 +179,12 @@ public class OrderDao {
         return order;
     }
 
-    // Method to remove a order from database by its id.
+    // Method to remove an order from database by its id.
     public void removeOrder(Order order) {
         // Get id of the order.
         int orderId = order.getId();
 
-        String query = "UPDATE 'order' SET order_is_deleted = true WHERE order_id = " + orderId;
+        String query = "UPDATE `order` SET order_is_deleted = true WHERE order_id = " + orderId;
         try {
             Class.forName("com.mysql.jdbc.Driver");
             connection = new Database().getConnection();

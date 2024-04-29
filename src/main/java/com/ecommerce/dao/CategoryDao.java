@@ -30,6 +30,14 @@ public class CategoryDao {
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println("Get category products amount catch: ");
             System.out.println(e.getMessage());
+        } finally {
+            if(this.connection != null) {
+                try {
+                    this.connection.close();
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+            }
         }
     }
 
@@ -48,6 +56,14 @@ public class CategoryDao {
             }
         } catch (SQLException | ClassNotFoundException e) {
             System.out.println(e.getMessage());
+        } finally {
+            if(this.connection != null) {
+                try {
+                    this.connection.close();
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+            }
         }
 
         // Call method to set category amount for category.
@@ -73,6 +89,14 @@ public class CategoryDao {
             }
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
+        } finally {
+            if(this.connection != null) {
+                try {
+                    this.connection.close();
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+            }
         }
 
         // Call method to set category amount for category.
