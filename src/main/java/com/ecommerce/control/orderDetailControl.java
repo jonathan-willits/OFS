@@ -2,6 +2,7 @@ package com.ecommerce.control;
 
 import com.ecommerce.dao.OrderDao;
 import com.ecommerce.entity.CartProduct;
+import com.ecommerce.entity.Account;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -20,7 +21,10 @@ public class orderDetailControl extends HttpServlet {
         int orderId = Integer.parseInt(request.getParameter("order-id"));
         // Get order by id from database.
         List<CartProduct> list = orderDao.getOrderDetailHistory(orderId);
-
+        Account a = (Account)request.getSession().getAttribute("account");
+        if (a.getAddress() != null) {
+            request.setAttribute("account_address", a.getAddress());
+        }
         request.setAttribute("order_detail_list", list);
         // Get request dispatcher and render to order-detail page.
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("order-detail.jsp");
