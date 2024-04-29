@@ -56,11 +56,11 @@
 
                                     <td style="min-width: 180px">
                                         <div class="input-group" style="max-width: fit-content; margin: 0;">
-                                            <div class="input-group-prepend">
-                                                <button class="btn btn-outline-primary js-btn-minus" type="button">
-                                                    &minus;
-                                                </button>
-                                            </div>
+<%--                                            <div class="input-group-prepend">--%>
+<%--                                                <button class="btn btn-outline-primary js-btn-minus" type="button">--%>
+<%--                                                    &minus;--%>
+<%--                                                </button>--%>
+<%--                                            </div>--%>
 
                                             <input name="product-quantity" type="text" class="form-control text-center"
                                                    value="${o.quantity}"
@@ -68,11 +68,11 @@
                                                    aria-label="Example text with button addon"
                                                    aria-describedby="button-addon1">
 
-                                            <div class="input-group-append">
-                                                <button class="btn btn-outline-primary js-btn-plus" type="button">
-                                                    &plus;
-                                                </button>
-                                            </div>
+<%--                                            <div class="input-group-append">--%>
+<%--                                                <button class="btn btn-outline-primary js-btn-plus" type="button">--%>
+<%--                                                    &plus;--%>
+<%--                                                </button>--%>
+<%--                                            </div>--%>
                                         </div>
                                     </td>
 
