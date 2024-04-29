@@ -19,14 +19,15 @@ async function initMap() {
     mapId: "DEMO_MAP_ID",
   });
 
-  // The marker, positioned at Uluru
+  // The marker, positioned at OFS
   const marker = new AdvancedMarkerElement({
     map: map,
     position: OFS,
     title: "OFS",
   });
 
-  const dest = document.getElementById("address").innerText
+  const dest = `${address}`;
+  console.log(dest)
   const request = {
     location: OFS,
     radius: 500,

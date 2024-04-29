@@ -8,7 +8,9 @@
 </head>
 <body>
 <div id="msg"> Your order is en route to </div>
-<div id = "address">"${account.address}"</div>
+String address = request.getParameter("address");
+<div id = "address">address</div>
+
 <!--The div element for the map -->
 <div id="map"></div>
 <!-- prettier-ignore -->
