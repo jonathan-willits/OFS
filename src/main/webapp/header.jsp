@@ -79,7 +79,7 @@
                 <li class="${home_active}"><a href="index.jsp">Home</a></li>
                 <li class="${about_active}"><a href="about.jsp">About</a></li>
                 <li class="${shop_active}"><a href="shop">Shop</a></li>
-                <li class="${contact_active}"><a href="contact.jsp">Contact</a></li>
+<%--                <li class="${contact_active}"><a href="contact.jsp">Contact</a></li>--%>
 
                 <c:if test="${sessionScope.account != null}">
                     <li class="${order_history_active}"><a href="order-history">Orders history</a></li>
@@ -90,9 +90,9 @@
                     <li class="${order_management_active}"><a href="order-management">Orders management</a></li>
                 </c:if>
 
-                <c:if test="${sessionScope.account.isAdmin == 1}">
-                    <li class="${websitem_active}"><a href="#">Website management</a></li>
-                </c:if>
+<%--                <c:if test="${sessionScope.account.isAdmin == 1}">--%>
+<%--                    <li class="${websitem_active}"><a href="#">Website management</a></li>--%>
+<%--                </c:if>--%>
             </ul>
         </div>
     </nav>

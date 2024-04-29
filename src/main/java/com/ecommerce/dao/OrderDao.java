@@ -7,6 +7,7 @@ import com.ecommerce.entity.Order;
 import com.ecommerce.entity.Product;
 //import com.oracle.wls.shaded.org.apache.xpath.operations.Or;
 
+import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -155,5 +156,42 @@ public class OrderDao {
             System.out.println(e.getMessage());
         }
         return list;
+    }
+
+    // Method to get a order by its id from database.
+    public Order getOrder(int orderId) {
+        Order order = new Order();
+        String query = "SELECT * FROM order WHERE order_id = " + orderId;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            connection = new Database().getConnection();
+            preparedStatement = connection.prepareStatement(query);
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                order.setId(resultSet.getInt(1));
+                order.setAccount(accountDao.getAccount(resultSet.getInt(2)));
+                order.setTotal(resultSet.getDouble(3));
+                order.setDate(resultSet.getDate(4));
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            System.out.println(e.getMessage());
+        }
+        return order;
+    }
+
+    // Method to remove a order from database by its id.
+    public void removeOrder(Order order) {
+        // Get id of the order.
+        int orderId = order.getId();
+
+        String query = "UPDATE 'order' SET order_is_deleted = true WHERE order_id = " + orderId;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            connection = new Database().getConnection();
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.executeUpdate();
+        } catch (ClassNotFoundException | SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

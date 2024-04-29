@@ -36,7 +36,7 @@
                                     </label>
 
                                     <input name="product-id" type="text" class="form-control"
-                                           id="id" value="${product.id}" readonly>
+                                           id="id" value="${product.id}">
                                 </div>
                             </div>
 
