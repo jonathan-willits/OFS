@@ -9,6 +9,7 @@ public class Order {
     private List<CartProduct> cartProducts;
     private double total;
     private Date date;
+    private boolean isDeleted;
 
     public Order() {
     }
@@ -20,12 +21,13 @@ public class Order {
         this.date = date;
     }
 
-    public Order(int id, Account account, List<CartProduct> item, double total, Date date) {
+    public Order(int id, Account account, List<CartProduct> item, double total, Date date, boolean isDeleted) {
         this.id = id;
         this.account = account;
         this.cartProducts = item;
         this.total = total;
         this.date = date;
+        this.isDeleted = isDeleted;
     }
 
     public int getId() {
@@ -60,6 +62,14 @@ public class Order {
         this.date = date;
     }
 
+    public boolean isDeleted() {
+        return isDeleted;
+    }
+
+    public void setDeleted(boolean isDeleted) {
+        this.isDeleted = isDeleted;
+    }
+
     public double getTotal() {
         return total;
     }
@@ -75,6 +85,7 @@ public class Order {
                 ", account=" + account +
                 ", cartProducts=" + cartProducts +
                 ", total=" + total +
+                ", isDeleted=" + isDeleted +
                 ", date=" + date +
                 '}';
     }

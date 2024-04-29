@@ -60,6 +60,14 @@ public class AccountDao {
             }
         } catch (ClassNotFoundException | SQLException | IOException e) {
             System.out.println(e.getMessage());
+        } finally {
+            if(this.connection != null) {
+                try {
+                    this.connection.close();
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+            }
         }
         return null;
     }
@@ -95,6 +103,14 @@ public class AccountDao {
             preparedStatement.executeUpdate();
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println(e.getMessage());
+        } finally {
+            if(this.connection != null) {
+                try {
+                    this.connection.close();
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+            }
         }
     }
 
@@ -122,6 +138,14 @@ public class AccountDao {
             preparedStatement.executeUpdate();
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println("Update profile catch: " + e.getMessage());
+        } finally {
+            if(this.connection != null) {
+                try {
+                    this.connection.close();
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+            }
         }
     }
 
@@ -147,6 +171,14 @@ public class AccountDao {
             preparedStatement.executeUpdate();
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println("Update profile catch: " + e.getMessage());
+        } finally {
+            if(this.connection != null) {
+                try {
+                    this.connection.close();
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+            }
         }
     }
 }

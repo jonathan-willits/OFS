@@ -13,8 +13,8 @@
     <div class="bg-light py-3">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 mb-0"><a href="/">Home</a> <span class="mx-2 mb-0">/</span> <strong
-                        class="text-black">Orders management</strong></div>
+                <div class="col-md-12 mb-0"><a href="index.jsp">Home</a> <span class="mx-2 mb-0">/</span> <strong
+                        class="text-black">Orders Management</strong></div>
             </div>
         </div>
     </div>
@@ -33,6 +33,7 @@
                                 <th>Price</th>
                                 <th>Quantity</th>
                                 <th>Total</th>
+                                <th style="min-width: 195px">Remove</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -51,6 +52,19 @@
                                     <td>${o.quantity}</td>
 
                                     <td>${o.quantity * o.price}</td>
+
+                                    <td>
+<%--                                        <a href="edit-order?order-id=${o.id}" class="btn btn-primary btn-sm"--%>
+<%--                                           style="background-color: green ; border-color: green">--%>
+<%--                                            <span class="icon icon-pencil"></span>--%>
+<%--                                        </a>--%>
+
+                                        <a href="remove-order?order-id=${o.id}"
+                                           class="btn btn-primary btn-sm ${(o.isDeleted) ? "disabled" : " "}"
+                                           style="background-color: red ; border-color: red">
+                                            <span class="icon icon-trash"></span>
+                                        </a>
+                                    </td>
                                 </tr>
                             </c:forEach>
                             </tbody>
