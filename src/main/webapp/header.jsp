@@ -42,7 +42,7 @@
 
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
                                         <a class="dropdown-item" href="profile-page">Your profile</a>
-                                        <a class="dropdown-item" href="">Logout</a>
+                                        <a class="dropdown-item" href="logout.jsp">Logout</a>
                                     </div>
                                 </li>
                             </c:if>

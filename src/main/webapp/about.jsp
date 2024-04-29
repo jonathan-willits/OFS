@@ -25,10 +25,10 @@
                 <div class="col-md-6">
                     <div class="block-16">
                         <figure>
-                            <img src="images/blog_1.jpg" alt="Image placeholder" class="img-fluid rounded">
-                            <a href="https://vimeo.com/channels/staffpicks/93951774" class="play-button popup-vimeo">
-                                <span class="ion-md-play"></span>
-                            </a>
+                            <img src="images/organic_food.jpg" alt="Image placeholder" class="img-fluid rounded">
+<%--                            <a href="" class="play-button popup-vimeo">--%>
+<%--                                <span class="ion-md-play"></span>--%>
+<%--                            </a>--%>
                         </figure>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
                     <div class="site-section-heading pt-3 mb-4">
                         <h2 class="text-black">How We Started</h2>
                     </div>
-                    <p>This CS 160 Project at San Jose State University was a requirement, and we completed in order to graduate.</p>
+                    <p>This CS 160 Project at San Jose State University was a requirement, and we completed it in order to graduate.</p>
                 </div>
             </div>
         </div>
@@ -60,13 +60,12 @@
                     <div class="block-38 text-center">
                         <div class="block-38-img">
                             <div class="block-38-header">
-                                <img src="images/person_1.jpg" alt="Image placeholder" class="mb-4">
+<%--                                <img src="images/person_1.jpg" alt="Image placeholder" class="mb-4">--%>
                                 <h3 class="block-38-heading h4">Osayame Erinmwingbovo</h3>
-                                <p class="block-38-subheading">CEO/Co-Founder</p>
+<%--                                <p class="block-38-subheading"></p>--%>
                             </div>
                             <div class="block-38-body">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aut minima nihil sit
-                                    distinctio recusandae doloribus ut fugit officia voluptate soluta. </p>
+<%--                                <p></p>--%>
                             </div>
                         </div>
                     </div>
@@ -75,13 +74,12 @@
                     <div class="block-38 text-center">
                         <div class="block-38-img">
                             <div class="block-38-header">
-                                <img src="images/person_2.jpg" alt="Image placeholder" class="mb-4">
+<%--                                <img src="images/person_2.jpg" alt="Image placeholder" class="mb-4">--%>
                                 <h3 class="block-38-heading h4">Annie Luu</h3>
-                                <p class="block-38-subheading">Co-Founder</p>
+<%--                                <p class="block-38-subheading"></p>--%>
                             </div>
                             <div class="block-38-body">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aut minima nihil sit
-                                    distinctio recusandae doloribus ut fugit officia voluptate soluta. </p>
+<%--                                <p></p>--%>
                             </div>
                         </div>
                     </div>
@@ -90,13 +88,12 @@
                     <div class="block-38 text-center">
                         <div class="block-38-img">
                             <div class="block-38-header">
-                                <img src="images/person_3.jpg" alt="Image placeholder" class="mb-4">
+<%--                                <img src="images/person_3.jpg" alt="Image placeholder" class="mb-4">--%>
                                 <h3 class="block-38-heading h4">Charlie Nguyen</h3>
-                                <p class="block-38-subheading">Marketing</p>
+<%--                                <p class="block-38-subheading"></p>--%>
                             </div>
                             <div class="block-38-body">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aut minima nihil sit
-                                    distinctio recusandae doloribus ut fugit officia voluptate soluta. </p>
+<%--                                <p></p>--%>
                             </div>
                         </div>
                     </div>
@@ -105,13 +102,13 @@
                     <div class="block-38 text-center">
                         <div class="block-38-img">
                             <div class="block-38-header">
-                                <img src="images/person_4.jpg" alt="Image placeholder" class="mb-4">
+<%--                                <img src="images/person_4.jpg" alt="Image placeholder" class="mb-4">--%>
                                 <h3 class="block-38-heading h4">Jonathan Willits</h3>
-                                <p class="block-38-subheading">Sales Manager</p>
+<%--                                <p class="block-38-subheading">Sales Manager</p>--%>
                             </div>
                             <div class="block-38-body">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aut minima nihil sit
-                                    distinctio recusandae doloribus ut fugit officia voluptate soluta. </p>
+<%--                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aut minima nihil sit--%>
+<%--                                    distinctio recusandae doloribus ut fugit officia voluptate soluta. </p>--%>
                             </div>
                         </div>
                     </div>
@@ -129,8 +126,7 @@
                     </div>
                     <div class="text">
                         <h2 class="text-uppercase">Free Shipping</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer
-                            accumsan tincidunt fringilla.</p>
+                        <p>Organic groceries delivered straight to your door the next business day if you order before closing hours</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="100">
@@ -138,9 +134,8 @@
                         <span class="icon-refresh2"></span>
                     </div>
                     <div class="text">
-                        <h2 class="text-uppercase">Free Returns</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer
-                            accumsan tincidunt fringilla.</p>
+                        <h2 class="text-thumb_up">Best Quality</h2>
+                        <p>High-quality, locally grown organic products</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="200">
@@ -149,8 +144,7 @@
                     </div>
                     <div class="text">
                         <h2 class="text-uppercase">Customer Support</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer
-                            accumsan tincidunt fringilla.</p>
+                        <p>Have Questions? We have answers</p>
                     </div>
                 </div>
             </div>

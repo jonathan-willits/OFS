@@ -44,7 +44,7 @@
                 <div class="block-5 mb-5">
                     <h3 class="footer-heading mb-4">Contact Info</h3>
                     <ul class="list-unstyled">
-                        <li class="address">One Washingstno, California, USA</li>
+                        <li class="address">One Washington Square, San Jose, California 95192, United States</li>
                         <li class="phone"><a href="tel://23923929210">+1 234 567-8900</a></li>
                         <li class="email">help@OFS.com</li>
                     </ul>

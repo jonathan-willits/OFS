@@ -14,7 +14,7 @@
     <div class="bg-light py-3">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 mb-0"><a href="/">Home</a> <span class="mx-2 mb-0">/</span> <strong
+                <div class="col-md-12 mb-0"><a href="index.jsp">Home</a> <span class="mx-2 mb-0">/</span> <strong
                         class="text-black">Shop</strong></div>
             </div>
         </div>
@@ -33,7 +33,7 @@
                                 <div class="dropdown mr-1 ml-md-auto">
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-secondary btn-sm dropdown-toggle"
-                                                id="dropdownMenuReference" data-toggle="dropdown">Reference
+                                                id="dropdownMenuReference" data-toggle="dropdown">Sort By
                                         </button>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
                                             <a class="dropdown-item" href="#">Relevance</a>

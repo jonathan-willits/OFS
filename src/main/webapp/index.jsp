@@ -37,7 +37,7 @@
 
                     <div class="text">
                         <h2 class="text-uppercase">Free Shipping with Orders 20+ LBS</h2>
-                        <p>Organic groceries delivered straight to your door the next business day.</p>
+                        <p>Organic groceries delivered straight to your door the next business day if you order before closing hours</p>
                     </div>
                 </div>
 

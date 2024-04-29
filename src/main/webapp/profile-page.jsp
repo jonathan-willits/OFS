@@ -39,7 +39,7 @@
                                         </c:if>
 
                                         <c:if test="${account.base64Image == null}">
-                                            <img class="icon" src="images/blank_avatar.png"
+                                            <img class="icon" src="images/blank-profile-circle.png"
                                                  id="blah"
                                                  data-toggle="dropdown" alt="image"
                                                  style="width: 15em; height: 15em; border-radius: 50%;">
@@ -111,14 +111,14 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="summary" class="text-black">
-                                Summary
-                            </label>
+<%--                        <div class="form-group">--%>
+<%--                            <label for="summary" class="text-black">--%>
+<%--                                Summary--%>
+<%--                            </label>--%>
 
-                            <textarea name="summary" id="summary" cols="30" rows="5" class="form-control"
-                                      placeholder="Write your notes here..."></textarea>
-                        </div>
+<%--                            <textarea name="summary" id="summary" cols="30" rows="5" class="form-control"--%>
+<%--                                      placeholder="Write your notes here..."></textarea>--%>
+<%--                        </div>--%>
 
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary btn-lg py-3 btn-block">Update profile</button>
