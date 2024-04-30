@@ -22,7 +22,7 @@ database.
 
 ## WIP
 ```
-1. Mapping service: currently not updating to frontend; 
+1. Mapping service: completed but currently not updating to frontend; 
    Code can be found in map.jsp, map.js
 ```
 
