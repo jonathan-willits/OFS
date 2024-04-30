@@ -24,4 +24,5 @@
     <link rel="stylesheet" href="css/aos.css">
 
     <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="./js/map.js"></script>
 </head>

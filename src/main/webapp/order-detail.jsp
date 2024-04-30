@@ -59,8 +59,6 @@
             </div>
         </div>
     </div>
-    <jsp:include page="map.jsp"> <jsp:param name="address" value="account_address"/></jsp:include>
-
     <jsp:include page="footer.jsp"/>
 </div>
 
