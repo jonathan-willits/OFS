@@ -33,6 +33,8 @@
 
                     <p><strong class="text-primary h4">$${product.price}</strong></p>
 
+                    <p class="text-black">${product.weight} lbs</p>
+
                     <form action="cart?product-id=&quantity=" method="get">
                         <div class="mb-3">
                             <div class="input-group mb-3" style="max-width: 200px;">

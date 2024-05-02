@@ -24,7 +24,7 @@
 <%--                    </div>--%>
 <%--                </div>--%>
 <%--            </div>--%>
-        </div>
+<%--        </div>--%>
     </div>
 
     <div class="site-section site-section-sm site-blocks-1">

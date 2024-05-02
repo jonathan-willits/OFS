@@ -32,6 +32,7 @@
                                 <th class="product-price">Price</th>
                                 <th class="product-quantity">Quantity</th>
                                 <th class="product-total">Total</th>
+                                <th class="product-weight">Weight</th>
                                 <th class="product-remove">Remove</th>
                             </tr>
                             </thead>
@@ -54,27 +55,37 @@
                                                value="${o.price}" style="text-align: center" readonly>
                                     </td>
 
-                                    <td style="min-width: 180px">
-                                        <div class="input-group" style="max-width: fit-content; margin: 0;">
+                                    <td>
+                                        <input name="product-quantity" class="form-control-plaintext h5 text-black"
+                                               value="${o.quantity}" style="text-align: center" readonly>
+                                    </td>
+
+                                    <td>
+                                        <input name="product-weight" class="form-control-plaintext h5 text-black"
+                                               value="${o.weight}" style="text-align: center" readonly>
+                                    </td>
+
+<%--                                    <td style="min-width: 180px">--%>
+<%--                                        <div class="input-group" style="max-width: fit-content; margin: 0;">--%>
 <%--                                            <div class="input-group-prepend">--%>
 <%--                                                <button class="btn btn-outline-primary js-btn-minus" type="button">--%>
 <%--                                                    &minus;--%>
 <%--                                                </button>--%>
 <%--                                            </div>--%>
 
-                                            <input name="product-quantity" type="text" class="form-control text-center"
-                                                   value="${o.quantity}"
-                                                   placeholder=""
-                                                   aria-label="Example text with button addon"
-                                                   aria-describedby="button-addon1">
+<%--                                            <input name="product-quantity" type="text" class="form-control text-center"--%>
+<%--                                                   value="${o.quantity}"--%>
+<%--                                                   placeholder=""--%>
+<%--                                                   aria-label="Example text with button addon"--%>
+<%--                                                   aria-describedby="button-addon1">--%>
 
 <%--                                            <div class="input-group-append">--%>
 <%--                                                <button class="btn btn-outline-primary js-btn-plus" type="button">--%>
 <%--                                                    &plus;--%>
 <%--                                                </button>--%>
 <%--                                            </div>--%>
-                                        </div>
-                                    </td>
+<%--                                        </div>--%>
+<%--                                    </td>--%>
 
                                     <td>
                                         <input name="product-price-total" class="form-control-plaintext h5 text-black"
@@ -97,18 +108,18 @@
                             <a href="shop" class="btn btn-outline-primary btn-sm btn-block">Continue shopping</a>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <label class="text-black h4" for="coupon">Coupon</label>
-                            <p>Enter your coupon code if you have one.</p>
-                        </div>
-                        <div class="col-md-8 mb-3 mb-md-0">
-                            <input type="text" class="form-control py-3" id="coupon" placeholder="Coupon Code">
-                        </div>
-                        <div class="col-md-4">
-                            <button class="btn btn-primary btn-sm">Apply Coupon</button>
-                        </div>
-                    </div>
+<%--                    <div class="row">--%>
+<%--                        <div class="col-md-12">--%>
+<%--                            <label class="text-black h4" for="coupon">Coupon</label>--%>
+<%--                            <p>Enter your coupon code if you have one.</p>--%>
+<%--                        </div>--%>
+<%--                        <div class="col-md-8 mb-3 mb-md-0">--%>
+<%--                            <input type="text" class="form-control py-3" id="coupon" placeholder="Coupon Code">--%>
+<%--                        </div>--%>
+<%--                        <div class="col-md-4">--%>
+<%--                            <button class="btn btn-primary btn-sm">Apply Coupon</button>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
                 </div>
                 <div class="col-md-6 pl-5">
                     <div class="row justify-content-end">

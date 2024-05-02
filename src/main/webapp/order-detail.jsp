@@ -57,8 +57,10 @@
                     </div>
                 </div>
             </div>
+            <jsp:include page="map.jsp"/>
         </div>
     </div>
+
     <jsp:include page="footer.jsp"/>
 </div>
 
