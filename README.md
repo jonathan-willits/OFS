@@ -21,20 +21,51 @@ database.
 ```
 
 ## WIP
-```
-1. Mapping service: completed but currently not updating to frontend; 
-   Code can be found in map.jsp, map.js
-```
+
+1. Mapping service: completed but currently not updating in frontend; 
+    Code can be found in map.jsp, map.js
+2. Credit card validation, registration validation, and login: completed but not fully integrated into the website.
+    Code can be found on the main branch in the same directory as this README.md under files named:
+
+   ```CreditCardValidator```, ```RegistrationValidation```, ```Validation```
 
 ## Prerequisites
 
 What things you need to install
 
 ```
-You need Tomcat server 8 or above installed.
-Locally installed MySQL or a MySQL server.
-Compatible IDE, Intellij IDEA recommended for this project.
+You need Docker and git installed on your local machine.
+If you don't have Docker installed, you can download it from https://www.docker.com/products/docker-desktop
+If you don't have git installed, you can download it from https://git-scm.com/downloads
 ```
+
+## How to run the project
+
+1. Open a terminal and navigate to the directory where you want to clone the project
+2. Git clone the project to your local machine
+
+    ```git clone https://github.com/anniebluu/CS160_Project.git```
+
+2. Navigate to the project directory
+
+   ```cd CS160_Project```
+
+3. Open Docker Desktop and make sure it is running
+4. If you have MySQL running on your local machine, stop it
+   1. By running this commmand for MacOS/Linux
+      ```sudo service mysql stop```
+   2. By running this command for Windows
+      ```net stop mysql```
+   This is to prevent any conflicts with the MySQL container that will be running in Docker.
+5. Run the following command to start the project
+   ```docker-compose up --build```
+6. Open a browser and navigate to http://localhost:8080/ to view the website
+
+## OFS Users
+Admin: ```admin```, password: ```password```
+
+Customer: ```customer```, password: ```password```
+
 ## Built With
 
 * [Java](https://www.oracle.com/java/technologies/javase-jdk16-downloads.html) - Oracle Java 16 JDK

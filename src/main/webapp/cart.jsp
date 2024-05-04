@@ -32,7 +32,7 @@
                                 <th class="product-price">Price</th>
                                 <th class="product-quantity">Quantity</th>
                                 <th class="product-total">Total</th>
-                                <th class="product-weight">Weight</th>
+<%--                                <th class="product-weight">Weight</th>--%>
                                 <th class="product-remove">Remove</th>
                             </tr>
                             </thead>
@@ -60,10 +60,10 @@
                                                value="${o.quantity}" style="text-align: center" readonly>
                                     </td>
 
-                                    <td>
-                                        <input name="product-weight" class="form-control-plaintext h5 text-black"
-                                               value="${o.weight}" style="text-align: center" readonly>
-                                    </td>
+<%--                                    <td>--%>
+<%--                                        <input name="product-weight" class="form-control-plaintext h5 text-black"--%>
+<%--                                               value="${o.weight}" style="text-align: center" readonly>--%>
+<%--                                    </td>--%>
 
 <%--                                    <td style="min-width: 180px">--%>
 <%--                                        <div class="input-group" style="max-width: fit-content; margin: 0;">--%>
