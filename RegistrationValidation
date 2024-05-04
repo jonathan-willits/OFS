@@ -1,0 +1,46 @@
+document.getElementById("myForm").addEventListener("submit", function(event) {
+    var username = document.getElementById("username").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var confirmPassword = document.getElementById("confirmPassword").value;
+
+    // Email format validation
+    if (!validateEmail(email)) {
+        alert("Please enter a valid email address");
+        event.preventDefault();
+        return;
+    }
+
+    // Password length validation
+    if (password.length < 8) {
+        alert("Password must be at least 8 characters long");
+        event.preventDefault();
+        return;
+    }
+
+    // Password match validation
+    if (password !== confirmPassword) {
+        alert("Passwords do not match");
+        event.preventDefault();
+        return;
+    }
+
+    // Additional password requirements (e.g., special characters, numbers)
+    if (!validatePassword(password)) {
+        alert("Password must contain a mix of special characters, letters, and numbers");
+        event.preventDefault();
+        return;
+    }
+});
+
+function validateEmail(email) {
+    // Basic email format validation
+    var re = /\S+@\S+.\S+/;
+    return re.test(email);
+}
+
+function validatePassword(password) {
+    // Password complexity validation (e.g., at least one special character, one number, one uppercase letter)
+    var re = /^(?=.[!@#$%^&])(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,}$/;
+    return re.test(password);
+}

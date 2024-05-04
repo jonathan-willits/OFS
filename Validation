@@ -1,0 +1,51 @@
+@WebServlet("/register")
+public class RegisterServlet extends HttpServlet {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String username = request.getParameter("username");
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        String confirmPassword = request.getParameter("confirmPassword");
+
+        // Email domain validation
+        String[] emailParts = email.split("@");
+        if (emailParts.length != 2 || !validateEmailDomain(emailParts[1])) {
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            response.getWriter().println("Please enter a valid email address");
+            return;
+        }
+
+        // Password length validation
+        if (password.length() < 8) {
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            response.getWriter().println("Password must be at least 8 characters long");
+            return;
+        }
+
+        // Password match validation
+        if (!password.equals(confirmPassword)) {
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            response.getWriter().println("Passwords do not match");
+            return;
+        }
+
+        // Additional password requirements (e.g., special characters, numbers)
+        if (!validatePassword(password)) {
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            response.getWriter().println("Password must contain a mix of special characters, letters, and numbers");
+            return;
+        }
+
+        // If all validations pass, proceed with account creation
+        response.getWriter().println("Account created successfully");
+    }
+
+    private boolean validateEmailDomain(String domain) {
+        // Simplified example: Check if the domain contains a dot
+        return domain.contains(".");
+    }
+
+    private boolean validatePassword(String password) {
+        // Simplified example: Check if the password is at least 8 characters long
+        return password.length() >= 8;
+    }
+}

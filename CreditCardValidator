@@ -1,0 +1,39 @@
+public class CreditCardValidator {
+    public static boolean validateCreditCard(String cardNumber) {
+        // Remove spaces and dashes from the card number
+        cardNumber = cardNumber.replaceAll("[\s-]", "");
+
+        // Check if the card number is a 16-digit number
+        if (!cardNumber.matches("^\d{16}$")) {
+            return false;
+        }
+
+        // Perform Luhn algorithm checksum validation
+        int sum = 0;
+        boolean doubleUp = false;
+        for (int i = cardNumber.length() - 1; i >= 0; i--) {
+            int digit = Integer.parseInt(cardNumber.substring(i, i + 1));
+
+            if (doubleUp) {
+                digit *= 2;
+                if (digit > 9) {
+                    digit -= 9;
+                }
+            }
+
+            sum += digit;
+            doubleUp = !doubleUp;
+        }
+
+        return sum % 10 == 0;
+    }
+
+    public static void main(String[] args) {
+        String cardNumber = "1234 5678 9012 3456";
+        if (validateCreditCard(cardNumber)) {
+            System.out.println("Credit card number is valid");
+        } else {
+            System.out.println("Credit card number is invalid");
+        }
+    }
+}
