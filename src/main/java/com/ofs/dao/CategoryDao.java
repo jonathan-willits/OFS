@@ -77,7 +77,7 @@ public class CategoryDao {
         List<Category> list = new ArrayList<>();
         String query = "SELECT * FROM category";
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             connection = new Database().getConnection();
             preparedStatement = connection.prepareStatement(query);
             resultSet = preparedStatement.executeQuery();
