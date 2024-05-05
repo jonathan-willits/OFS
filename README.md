@@ -61,6 +61,10 @@ If you don't have git installed, you can download it from https://git-scm.com/do
    ```docker-compose up --build```
 6. Open a browser and navigate to http://localhost:8080/ to view the website
 
+## how-to video for install/configure/customization/usage ##
+Video link:
+https://drive.google.com/file/d/1_XwcDng6KE1AfHpxDi58AjypiV3BESJu/view?usp=drive_link
+
 ## OFS Users
 Admin: ```admin```, password: ```password```
 
