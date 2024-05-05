@@ -38,5 +38,4 @@ build/
 
 ### Docker ###
 db/
-data/
 target/
