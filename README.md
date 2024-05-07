@@ -51,12 +51,27 @@ If you don't have git installed, you can download it from https://git-scm.com/do
    ```cd CS160_Project```
 
 3. Open Docker Desktop and make sure it is running
-4. If you have MySQL running on your local machine, stop it
-   1. By running this commmand for MacOS/Linux
-      ```sudo service mysql stop```
-   2. By running this command for Windows
-      ```net stop mysql```
-   This is to prevent any conflicts with the MySQL container that will be running in Docker.
+4. If you have MySQL running on your local machine, stop it. 
+This is to prevent any port conflicts with the MySQL container that will be running in Docker.
+Here are some possible ways to stop MySQL depending on your setup:
+
+   1. MacOS
+      1. Run this command for MacOS
+          ```sudo service mysql stop```
+      2. Or in your Activity Monitor on MacOS, find ```mysqld``` in the list of processes and click the X button in the top left corner of the window to stop it.
+      3. Or run this command for MacOS if you installed MySQL using Homebrew
+          ```brew services stop mysql```
+      4. Or stop MySQL in your System Settings -> MySQL -> Stop MySQL Server
+      5. If none of the above methods work, please search for how to stop MySQL on your specific MacOS version.
+   2. Windows
+      1. Run this command for Windows
+            ```net stop mysql```
+      2. Or stop MySQL in Services
+         1. Press the Windows key and type ```services```
+         2. Find MySQL in the list of services, right-click it, and select Stop
+      3. Or open Task Manager and find ```mysqld``` in the list of processes, right-click it, and select End Task
+      4. If none of the above methods work, please search for how to stop MySQL on your specific Windows version.
+   
 5. Run the following command to start the project
    ```docker-compose up --build```
 6. Open a browser and navigate to http://localhost:8080/ to view the website

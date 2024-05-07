@@ -98,7 +98,7 @@
                                     Email Address <span class="text-danger">*</span>
                                 </label>
 
-                                <input type="text" class="form-control" id="email" name="email"
+                                <input type="email" class="form-control" id="email" name="email"
                                        value="${account.email}">
                             </div>
                             <div class="col-md-6">
