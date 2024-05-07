@@ -30,7 +30,8 @@ public class CartControl extends HttpServlet {
     ProductDao productDao = new ProductDao();
 
     // Method to remove a product from cart.
-    private void removeCartProduct(int productId, Order order, double totalPrice) {
+    private void removeCartProduct(HttpSession session, int productId, Order order, double subtotal, double totalWeight, double totalTax, double total) {
+
         // Get list of products from the existing order.
         List<CartProduct> list = order.getCartProducts();
 
@@ -41,8 +42,18 @@ public class CartControl extends HttpServlet {
 
             // Delete the product if its id equals the id of deleting product.
             if (cartProduct.getProduct().getId() == productId) {
+                NumberFormat formatter = new DecimalFormat("#0.00");
                 // Remove price of deleting product from total price.
-                totalPrice -= (cartProduct.getPrice() * cartProduct.getQuantity());
+                subtotal -= Double.parseDouble(formatter.format((cartProduct.getPrice() * cartProduct.getQuantity())));
+                totalWeight -= Double.parseDouble(formatter.format(((cartProduct.getWeight() * cartProduct.getQuantity()))));
+                // Tax is 9.375%
+                totalTax = Double.parseDouble(formatter.format((subtotal * 0.09375)));
+                total = Double.parseDouble(formatter.format((subtotal + totalTax)));
+
+                session.setAttribute("subtotal", subtotal);
+                session.setAttribute("total_weight", totalWeight);
+                session.setAttribute("total_tax", totalTax);
+                session.setAttribute("total", total);
 
                 // Remove product from cart.
                 iterator.remove();
@@ -57,9 +68,12 @@ public class CartControl extends HttpServlet {
         // Check if request is remove product from cart or not.
         if (request.getParameter("remove-product-id") != null) {
             Order order = (Order) session.getAttribute("order");
-            double totalPrice = (double) session.getAttribute("total_price");
+            double subtotal = (double) session.getAttribute("subtotal");
+            double totalWeight = (double) session.getAttribute("total_weight");
+            double totalTax = (double) session.getAttribute("total_tax");
+            double total = (double) session.getAttribute("total");
             int productId = Integer.parseInt(request.getParameter("remove-product-id"));
-            removeCartProduct(productId, order, totalPrice);
+            removeCartProduct(session, productId, order, subtotal, totalWeight, totalTax, total);
             response.sendRedirect("cart.jsp");
             return;
         }
@@ -68,11 +82,25 @@ public class CartControl extends HttpServlet {
         int quantity = 1;
         int productId;
         // Check is the total price of order exist or not.
-        double totalPrice;
-        if (session.getAttribute("total_price") == null) {
-            totalPrice = 0;
+        double subtotal;
+        double totalWeight;
+        double totalTax;
+        double total;
+        if (session.getAttribute("total") == null) {
+            subtotal = 0;
+            totalWeight = 0;
+            totalTax = 0;
+            total = 0;
         } else {
-            totalPrice = (double) session.getAttribute("total_price");
+            NumberFormat formatter = new DecimalFormat("#0.00");
+//            subtotal = (double) session.getAttribute("subtotal");
+//            totalWeight = (double) session.getAttribute("total_weight");
+//            totalTax = (double) session.getAttribute("total_tax");
+//            total = subtotal + totalTax;
+            subtotal = Double.parseDouble(formatter.format(String.valueOf((double) session.getAttribute("subtotal"))));
+            totalWeight = Double.parseDouble(formatter.format(String.valueOf((double) session.getAttribute("total_weight"))));
+            totalTax = Double.parseDouble(formatter.format(String.valueOf((double) session.getAttribute("total_tax"))));
+            total = Double.parseDouble(formatter.format(String.valueOf(subtotal + totalTax)));
         }
 
         // Generate if product exist in database.
@@ -104,11 +132,19 @@ public class CartControl extends HttpServlet {
                     cartProduct.setQuantity(quantity);
                     cartProduct.setProduct(product);
                     cartProduct.setPrice(product.getPrice());
+                    cartProduct.setWeight(product.getWeight());
 
                     // Count the total price of the order.
                     NumberFormat formatter = new DecimalFormat("#0.00");
 
-                    totalPrice += Double.parseDouble(formatter.format((product.getPrice() * quantity)));
+                    subtotal += Double.parseDouble(formatter.format((product.getPrice() * quantity)));
+                    totalWeight += Double.parseDouble(formatter.format((product.getWeight() * quantity)));
+
+                    // Tax is 9.375%
+                    totalTax = Double.parseDouble(formatter.format((subtotal * 0.09375)));
+
+                    // Cart total
+                    total = Double.parseDouble(formatter.format((subtotal + totalTax)));
 
                     // Add product to list.
                     list.add(cartProduct);
@@ -116,7 +152,10 @@ public class CartControl extends HttpServlet {
                     // Add list of cart products to order.
                     order.setCartProducts(list);
 
-                    session.setAttribute("total_price", totalPrice);
+                    session.setAttribute("subtotal", subtotal);
+                    session.setAttribute("total_weight", totalWeight);
+                    session.setAttribute("total_tax", totalTax);
+                    session.setAttribute("total", total);
                     session.setAttribute("order", order);
                 } else {
                     // Get exist order from session.
@@ -129,7 +168,10 @@ public class CartControl extends HttpServlet {
                     for (CartProduct cartProduct : list) {
                         if (cartProduct.getProduct().getId() == product.getId()) {
                             cartProduct.setQuantity(cartProduct.getQuantity() + quantity);
-                            totalPrice += product.getPrice() * quantity;
+                            subtotal += product.getPrice() * quantity;
+                            totalWeight += product.getWeight() * quantity;
+                            totalTax = subtotal * 0.09375;
+                            total = subtotal + totalTax;
                             flag = true;
                         }
                     }
@@ -140,11 +182,17 @@ public class CartControl extends HttpServlet {
                         cartProduct.setQuantity(quantity);
                         cartProduct.setProduct(product);
                         cartProduct.setPrice(product.getPrice());
-                        totalPrice += product.getPrice() * quantity;
+                        subtotal += product.getPrice() * quantity;
+                        totalWeight += product.getWeight() * quantity;
+                        totalTax = subtotal * 0.09375;
+                        total = subtotal + totalTax;
                         list.add(cartProduct);
                     }
 
-                    session.setAttribute("total_price", totalPrice);
+                    session.setAttribute("subtotal", subtotal);
+                    session.setAttribute("total_weight", totalWeight);
+                    session.setAttribute("total_tax", totalTax);
+                    session.setAttribute("total", total);
                     session.setAttribute("order", order);
                 }
             }

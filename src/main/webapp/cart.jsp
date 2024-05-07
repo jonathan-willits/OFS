@@ -29,10 +29,10 @@
                             <tr>
                                 <th class="product-thumbnail">Image</th>
                                 <th class="product-name">Product</th>
-                                <th class="product-price">Price</th>
                                 <th class="product-quantity">Quantity</th>
+                                <th class="product-price">Price</th>
+                                <th class="product-weight">Weight</th>
                                 <th class="product-total">Total</th>
-<%--                                <th class="product-weight">Weight</th>--%>
                                 <th class="product-remove">Remove</th>
                             </tr>
                             </thead>
@@ -51,19 +51,19 @@
                                     </td>
 
                                     <td>
-                                        <input name="product-price" class="form-control-plaintext h5 text-black"
-                                               value="${o.price}" style="text-align: center" readonly>
-                                    </td>
-
-                                    <td>
                                         <input name="product-quantity" class="form-control-plaintext h5 text-black"
                                                value="${o.quantity}" style="text-align: center" readonly>
                                     </td>
 
-<%--                                    <td>--%>
-<%--                                        <input name="product-weight" class="form-control-plaintext h5 text-black"--%>
-<%--                                               value="${o.weight}" style="text-align: center" readonly>--%>
-<%--                                    </td>--%>
+                                    <td>
+                                        <input name="product-price" class="form-control-plaintext h5 text-black"
+                                               value="$${o.price}" style="text-align: center" readonly>
+                                    </td>
+
+                                    <td>
+                                        <input name="product-weight" class="form-control-plaintext h5 text-black"
+                                               value="${o.weight} lbs" style="text-align: center" readonly>
+                                    </td>
 
 <%--                                    <td style="min-width: 180px">--%>
 <%--                                        <div class="input-group" style="max-width: fit-content; margin: 0;">--%>
@@ -89,7 +89,7 @@
 
                                     <td>
                                         <input name="product-price-total" class="form-control-plaintext h5 text-black"
-                                               value="${o.price * o.quantity}" style="text-align: center" readonly>
+                                               value="$${o.price * o.quantity}" style="text-align: center" readonly>
                                     </td>
 
                                     <td><a href="cart?remove-product-id=${o.product.id}" class="btn btn-primary btn-sm">X</a></td>
@@ -130,14 +130,55 @@
                                 </div>
                             </div>
                             <div class="row mb-5">
+
+                                <div class="col-md-6">
+                                    <span class="text-black" style="font-size: 1.5em">Total Weight</span>
+                                </div>
+
+                                <div class="col-md-6 text-right">
+                                    <input name="order-price-total" class="form-control-plaintext h5 text-black"
+                                           value="${total_weight} lbs" style="text-align: center" readonly>
+                                </div>
+
+                            </div>
+
+                            <div class="row mb-5">
+                                <div class="col-md-6">
+                                    <span class="text-black" style="font-size: 1.5em">Subtotal</span>
+                                </div>
+
+                                <div class="col-md-6 text-right">
+                                    <input name="order-price-total" class="form-control-plaintext h5 text-black"
+                                           value="$${subtotal}" style="text-align: center" readonly>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <span class="text-black" style="font-size: 1.5em">Tax</span>
+                                </div>
+
+                                <div class="col-md-6 text-right">
+                                    <input name="order-price-total" class="form-control-plaintext h5 text-black"
+                                           value="$${total_tax}" style="text-align: center" readonly>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <span class="text-black" style="font-size: 1.5em">Shipping</span>
+                                </div>
+
+                                <div class="col-md-6 text-right">
+                                    <input name="order-price-total" class="form-control-plaintext h5 text-black"
+                                           value="$${shipping}" style="text-align: center" readonly>
+                                </div>
+
                                 <div class="col-md-6">
                                     <span class="text-black" style="font-size: 1.5em">Total</span>
                                 </div>
 
                                 <div class="col-md-6 text-right">
                                     <input name="order-price-total" class="form-control-plaintext h5 text-black"
-                                           value="${total_price}" style="text-align: center" readonly>
+                                           value="$${total}" style="text-align: center" readonly>
                                 </div>
+
                             </div>
 
                             <div class="row">
