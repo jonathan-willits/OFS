@@ -44,7 +44,7 @@
                 <div class="block-5 mb-5">
                     <h3 class="footer-heading mb-4">OFS</h3>
                     <ul class="list-unstyled">
-                        <li class="address">One Washington Square, San Jose, California 95192, United States</li>
+                        <li class="address"><a href="https://maps.app.goo.gl/tcuf9xUAZKZP1pCQ8">One Washington Square, San Jose, California 95192, United States</a></li>
                         <li class="phone"><a href="tel://23923929210">+1 234 567-8900</a></li>
                         <li class="email">help@OFS.com</li>
                     </ul>

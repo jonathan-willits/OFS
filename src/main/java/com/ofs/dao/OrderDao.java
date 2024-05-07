@@ -100,8 +100,10 @@ public class OrderDao {
                 Product product = productDao.getProduct(resultSet.getInt(1));
                 int productQuantity = resultSet.getInt(3);
                 double productPrice = resultSet.getDouble(4);
+                double productWeight = resultSet.getDouble(10);
+                double productTax = 0;
 
-                list.add(new CartProduct(product, productQuantity, productPrice));
+                list.add(new CartProduct(product, productQuantity, productPrice, productWeight, productTax));
             }
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println("Query cart product list catch:");
@@ -146,8 +148,10 @@ public class OrderDao {
                 Product product = productDao.getProduct(resultSet.getInt(1));
                 int quantity = resultSet.getInt(3);
                 double price = resultSet.getDouble(4);
+                double weight = resultSet.getDouble(10);
+                double tax = 0;
 
-                list.add(new CartProduct(product, quantity ,price));
+                list.add(new CartProduct(product, quantity ,price, weight, tax));
             }
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println("Get order detail catch:");

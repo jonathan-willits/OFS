@@ -73,15 +73,15 @@ public class ProductDao {
         } catch (SQLException | ClassNotFoundException | IOException e) {
             System.out.println(e.getMessage());
         }
-//        finally {
-//            if(this.connection != null) {
-//                try {
-//                    this.connection.close();
-//                } catch (Exception e) {
-//                    System.out.println(e.getMessage());
-//                }
-//            }
-//        }
+        finally {
+            if(this.connection != null) {
+                try {
+                    this.connection.close();
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+        }
         return list;
     }
 
@@ -115,15 +115,15 @@ public class ProductDao {
         } catch (SQLException | ClassNotFoundException | IOException e) {
             System.out.println(e.getMessage());
         }
-//        finally {
-//            if(this.connection != null) {
-//                try {
-//                    this.connection.close();
-//                } catch (Exception e) {
-//                    System.out.println(e.getMessage());
-//                }
-//            }
-//        }
+        finally {
+            if(this.connection != null) {
+                try {
+                    this.connection.close();
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+        }
         return product;
     }
 
@@ -159,15 +159,15 @@ public class ProductDao {
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println(e.getMessage());
         }
-//        finally {
-//            if(this.connection != null) {
-//                try {
-//                    this.connection.close();
-//                } catch (Exception e) {
-//                    System.out.println(e.getMessage());
-//                }
-//            }
-//        }
+        finally {
+            if(this.connection != null) {
+                try {
+                    this.connection.close();
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+        }
     }
 
     // Method to add product to database.
@@ -191,15 +191,15 @@ public class ProductDao {
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println(e.getMessage());
         }
-//        finally {
-//            if(this.connection != null) {
-//                try {
-//                    this.connection.close();
-//                } catch (Exception e) {
-//                    System.out.println(e.getMessage());
-//                }
-//            }
-//        }
+        finally {
+            if(this.connection != null) {
+                try {
+                    this.connection.close();
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+        }
     }
 
     // Method to edit product in database.
@@ -221,15 +221,15 @@ public class ProductDao {
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println(e.getMessage());
         }
-//        finally {
-//            if(this.connection != null) {
-//                try {
-//                    this.connection.close();
-//                } catch (Exception e) {
-//                    System.out.println(e.getMessage());
-//                }
-//            }
-//        }
+        finally {
+            if(this.connection != null) {
+                try {
+                    this.connection.close();
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+        }
     }
 
     // Method to get 12 products to display on each page.
@@ -253,15 +253,15 @@ public class ProductDao {
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println(e.getMessage());
         }
-//        finally {
-//            if(this.connection != null) {
-//                try {
-//                    this.connection.close();
-//                } catch (Exception e) {
-//                    System.out.println(e.getMessage());
-//                }
-//            }
-//        }
+        finally {
+            if(this.connection != null) {
+                try {
+                    this.connection.close();
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+        }
         return totalProduct;
     }
 
@@ -278,14 +278,14 @@ public class ProductDao {
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println(e.getMessage());
         }
-//        finally {
-//            if(this.connection != null) {
-//                try {
-//                    this.connection.close();
-//                } catch (Exception e) {
-//                    System.out.println(e.getMessage());
-//                }
-//            }
-//        }
+        finally {
+            if(this.connection != null) {
+                try {
+                    this.connection.close();
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+        }
     }
 }
