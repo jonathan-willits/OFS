@@ -1,87 +1,17 @@
-# Comments are provided throughout this file to help you get started.
-# If you need more help, visit the Docker Compose reference guide at
-# https://docs.docker.com/go/compose-spec-reference/
-
-# Here the instructions define your application as a service called "app".
-# This service is built from the Dockerfile in the current directory.
-# You can add other services your application may depend on here, such as a
-# database or a cache. For examples, see the Awesome Compose repository:
-# https://github.com/docker/awesome-compose
-
-
-#services:
-##  app:
-##    build:
-##      context: .
-#
-#  web:
-#    container_name: ofs_tomcat
-#    build: .
-#    image: tomcat:9.0.88
-#    ports:
-#      - 8080:8080
-#    volumes:
-#      - ./target/CS160_Project-1.0-SNAPSHOT.war:/usr/local/tomcat/webapps/CS160_Project-1.0-SNAPSHOT.war
-#    depends_on:
-#      db:
-#        condition: service_healthy
-#    environment:
-##      - JDBC_URL=jdbc:mysql://localhost:3306/ofs
-#      - JDBC_URL=jdbc:mysql://db:3306/ofs
-#      - JDBC_USER=root
-#      - JDBC_PASSWORD=password
-##      - JDBC_DRIVER=com.mysql.jdbc.Driver
-##      MYSQL_HOST: db
-#    links:
-#      - db
-#    networks:
-#      - app-network
-#
-#  db:
-#      container_name: ofs_db
-#      image: mysql:8.2.0
-#      command: mysqld
-#      healthcheck:
-#        test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
-#        timeout: 20s
-#        retries: 10
-#      environment:
-#          MYSQL_ROOT_PASSWORD: password
-#          MYSQL_DATABASE: ofs
-#          MYSQL_HOST: db
-#      ports:
-#          - 3306:3306
-#      volumes:
-#          - ./ofs_dump.sql:/docker-entrypoint-initdb.d/ofs_dump.sql
-##          - ./data:/var/lib/mysql
-#      restart: always
-#      networks:
-#        - app-network
-#
-#volumes:
-#    db-data:
-#
-#networks:
-#  app-network:
-#    driver: bridge
-
-
 services:
   db:
     container_name: ofs_db
-    image: mysql:8.2.0
+    image: mysql:8.3.0
     volumes:
       - ./db:/var/lib/mysql
       - ./ofs_dump.sql:/docker-entrypoint-initdb.d/ofs_dump.sql
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: ofs
-#      MYSQL_USER: root
-#      MYSQL_PASSWORD: password
     ports:
         - 3306:3306
   web:
-    container_name: ofs_tomcat
+    container_name: ofs_web
     build: .
     depends_on:
       - db
@@ -92,9 +22,7 @@ services:
         - 8080:8080
     environment:
       MYSQL_ROOT_PASSWORD: password
-#      MYSQL_PASSWORD: password
       MYSQL_DATABASE: ofs
-#      MYSQL_USER: root
 
 volumes:
   db:
