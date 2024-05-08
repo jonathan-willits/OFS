@@ -79,9 +79,9 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="row mb-5">
-                        <div class="col-md-6">
-                            <button class="btn btn-outline-primary btn-sm btn-block">Delete</button>
-                        </div>
+<%--                        <div class="col-md-6">--%>
+<%--                            <button class="btn btn-outline-primary btn-sm btn-block">Delete</button>--%>
+<%--                        </div>--%>
 
                         <!-- Button trigger add product modal -->
                         <div class="col-md-6 mb-3 mb-md-0">
@@ -98,7 +98,7 @@
                                       enctype="multipart/form-data">
                                     <div class="modal-header">
                                         <h5 class="modal-title text-black" id="addProductModalLabel">
-                                            Product information
+                                            Product Information
                                         </h5>
 
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -115,7 +115,7 @@
                                                     </label>
 
                                                     <input name="product-name" type="text" class="form-control"
-                                                           id="product-name">
+                                                           id="product-name" required>
                                                 </div>
                                             </div>
 
@@ -126,7 +126,7 @@
                                                     </label>
 
                                                     <input name="product-image" type="file" class="form-control"
-                                                           id="product-image">
+                                                           id="product-image" required>
                                                 </div>
                                             </div>
 
@@ -137,7 +137,7 @@
                                                     </label>
 
                                                     <input name="product-price" type="number" class="form-control"
-                                                           id="product-price">
+                                                           id="product-price" required>
                                                 </div>
                                             </div>
 
@@ -149,7 +149,7 @@
 
                                                     <textarea name="product-description" id="product-description"
                                                               cols="30" rows="7"
-                                                              class="form-control"></textarea>
+                                                              class="form-control" required></textarea>
                                                 </div>
                                             </div>
 
@@ -160,7 +160,7 @@
                                                     </label>
 
                                                     <input name="product-amount" type="number" class="form-control"
-                                                           id="product-amount">
+                                                           id="product-amount" required>
                                                 </div>
                                             </div>
 
@@ -171,7 +171,7 @@
                                                     </label>
 
                                                     <select name="product-category" id="product-category"
-                                                            class="form-control">
+                                                            class="form-control" required>
                                                         <c:forEach items="${category_list}" var="o">
                                                             <option value="${o.id}">${o.name}</option>
                                                         </c:forEach>

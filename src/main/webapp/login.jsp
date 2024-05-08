@@ -43,11 +43,11 @@
                     ${alert}
 
                     <div class="wrap-input100 validate-input m-b-16" data-validate="Username is required">
-                        <input class="input100" type="text" name="username" placeholder="Username">
+                        <input class="input100" type="text" name="username" placeholder="Username" required>
                     </div>
 
                     <div class="wrap-input100 validate-input m-b-16" data-validate="Password is required">
-                        <input class="input100" type="password" name="password" placeholder="Password">
+                        <input class="input100" type="password" name="password" placeholder="Password" required>
                     </div>
 
 <%--                    <div class="flex-sb-m w-full p-t-3 p-b-24">--%>
@@ -77,7 +77,7 @@
                 <p class="txt1" style="color: #999999">
                     Don't have an account?
                     <a href="register.jsp" class="txt1">
-                        Create here
+                        Create Account
                     </a>
                 </p>
             </div>

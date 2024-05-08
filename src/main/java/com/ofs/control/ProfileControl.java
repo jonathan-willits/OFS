@@ -35,14 +35,19 @@ public class ProfileControl extends HttpServlet {
         String address = request.getParameter("address");
         String email = request.getParameter("email");
         String phone = request.getParameter("phone");
+        String creditCard = request.getParameter("credit_card");
+        String month = request.getParameter("month");
+        String year = request.getParameter("year");
+        String cvv = request.getParameter("cvv");
+        String zipCode = request.getParameter("zip_code");
 
         // Set default profile image for account.
         Part part = request.getPart("profile-image");
         InputStream inputStream = part.getInputStream();
 
-        System.out.println(accountId + " " + firstName + " " + lastName + " " + address + " " + email + " " + phone);
+        System.out.println(accountId + " " + firstName + " " + lastName + " " + address + " " + email + " " + phone + " " + creditCard + " " + month + " " + year + " " + cvv + " " + zipCode);
 
-        accountDao.editProfileInformation(accountId, firstName, lastName, address, email, phone, inputStream);
+        accountDao.editProfileInformation(accountId, firstName, lastName, address, email, phone, inputStream, Long.parseLong(creditCard), Integer.parseInt(month), Integer.parseInt(year), Integer.parseInt(cvv), Integer.parseInt(zipCode));
         response.sendRedirect("login");
     }
 }

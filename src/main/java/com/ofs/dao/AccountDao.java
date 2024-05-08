@@ -48,6 +48,11 @@ public class AccountDao {
                 account.setLastName(resultSet.getString(9));
                 account.setEmail(resultSet.getString(10));
                 account.setPhone(resultSet.getString(11));
+                account.setCreditCard(resultSet.getLong(12));
+                account.setMonth(resultSet.getInt(13));
+                account.setYear(resultSet.getInt(14));
+                account.setCvv(resultSet.getInt(15));
+                account.setZipCode(resultSet.getInt(16));
 
                 // Get profile image from database.
                 if (resultSet.getBlob(6) == null) {
@@ -115,14 +120,19 @@ public class AccountDao {
     }
 
     // Method to edit profile information.
-    public void editProfileInformation(int accountId, String firstName, String lastName, String address, String email, String phone, InputStream image) {
+    public void editProfileInformation(int accountId, String firstName, String lastName, String address, String email, String phone, InputStream image, long creditCard, int month, int year, int cvv, int zipCode) {
         String query = "UPDATE account SET " +
                 "account_first_name = ?, " +
                 "account_last_name = ?, " +
                 "account_address = ?, " +
                 "account_email = ?, " +
                 "account_phone = ?, " +
-                "account_image = ?" +
+                "account_image = ?, " +
+                "account_credit_card = ?, " +
+                "account_month = ?, " +
+                "account_year = ?, " +
+                "account_cvv = ?, " +
+                "account_zip_code = ? " +
                 "WHERE account_id = ?";
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -135,6 +145,11 @@ public class AccountDao {
             preparedStatement.setString(5, phone);
             preparedStatement.setBinaryStream(6, image);
             preparedStatement.setInt(7, accountId);
+            preparedStatement.setLong(8, creditCard);
+            preparedStatement.setInt(9, month);
+            preparedStatement.setInt(10, year);
+            preparedStatement.setInt(11, cvv);
+            preparedStatement.setInt(12, zipCode);
             preparedStatement.executeUpdate();
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println("Update profile catch: " + e.getMessage());
@@ -150,13 +165,18 @@ public class AccountDao {
     }
 
     // Method to update profile information.
-    public void updateProfileInformation(int accountId, String firstName, String lastName, String address, String email, String phone) {
+    public void updateProfileInformation(int accountId, String firstName, String lastName, String address, String email, String phone, long creditCard, int month, int year, int cvv, int zipCode) {
         String query = "UPDATE account SET " +
                 "account_first_name = ?, " +
                 "account_last_name = ?, " +
                 "account_address = ?, " +
                 "account_email = ?, " +
-                "account_phone = ? " +
+                "account_phone = ?, " +
+                "account_credit_card = ?, " +
+                "account_month = ?, " +
+                "account_year = ?, " +
+                "account_cvv = ?, " +
+                "account_zip_code = ? " +
                 "WHERE account_id = ?";
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -168,6 +188,11 @@ public class AccountDao {
             preparedStatement.setString(4, email);
             preparedStatement.setString(5, phone);
             preparedStatement.setInt(6, accountId);
+            preparedStatement.setLong(7, creditCard);
+            preparedStatement.setInt(8, month);
+            preparedStatement.setInt(9, year);
+            preparedStatement.setInt(10, cvv);
+            preparedStatement.setInt(11, zipCode);
             preparedStatement.executeUpdate();
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println("Update profile catch: " + e.getMessage());

@@ -51,22 +51,22 @@
                             </figure>
                             <figcaption>Click here to change profile image</figcaption>
                         </label>
-                        <input name="profile-image" type="file" id="imgInp" style="display: none;">
+                        <input name="profile-image" type="file" id="imgInp" style="display: none;" required>
                     </div>
 
                     <div class="wrap-input100 validate-input m-b-16" data-validate="Username is required">
-                        <input class="input100" type="text" name="username" placeholder="Username">
+                        <input class="input100" type="text" name="username" placeholder="Username" minlength="2" maxlength="32" pattern="[A-Za-z0-9]{1,32}" required>
                         <span class="focus-input100"></span>
                     </div>
 
                     <div class="wrap-input100 validate-input m-b-16" data-validate="Password is required">
-                        <input class="input100" type="password" name="password" placeholder="Password">
+                        <input class="input100" type="password" name="password" placeholder="Password" minlength="8" required>
                         <span class="focus-input100"></span>
                     </div>
 
                     <div class="wrap-input100 validate-input m-b-16" data-validate="Password is required">
                         <input class="input100" type="password" name="repeat-password"
-                               placeholder="Repeat your password">
+                               placeholder="Repeat your password" required>
                         <span class="focus-input100"></span>
                     </div>
 
@@ -82,7 +82,7 @@
                 <p class="txt1" style="color: #999999">
                     Already have an account?
                     <a href="login.jsp" class="txt1">
-                        Login here
+                        Login
                     </a>
                 </p>
             </div>

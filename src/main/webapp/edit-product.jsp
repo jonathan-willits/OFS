@@ -22,7 +22,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h2 class="h3 mb-3 text-black">Product information</h2>
+                    <h2 class="h3 mb-3 text-black">Product Information</h2>
                 </div>
 
                 <div class="col-md-7">
@@ -36,7 +36,7 @@
                                     </label>
 
                                     <input name="product-id" type="text" class="form-control"
-                                           id="id" value="${product.id}">
+                                           id="id" value="${product.id}" required>
                                 </div>
                             </div>
 
@@ -47,7 +47,7 @@
                                     </label>
 
                                     <input name="product-name" type="text" class="form-control"
-                                           id="name" value="${product.name}">
+                                           id="name" value="${product.name}" required>
                                 </div>
                             </div>
 
@@ -58,7 +58,7 @@
                                     </label>
 
                                     <input name="product-image" type="file" class="form-control"
-                                           id="image">
+                                           id="image" required>
                                 </div>
                             </div>
 
@@ -69,7 +69,7 @@
                                     </label>
 
                                     <input name="product-price" type="number" class="form-control"
-                                           id="price" value="${product.price}">
+                                           id="price" value="${product.price}" required>
                                 </div>
                             </div>
 
@@ -81,7 +81,7 @@
 
                                     <textarea name="product-description" id="description"
                                               cols="30" rows="7"
-                                              class="form-control">${product.description}</textarea>
+                                              class="form-control" required>${product.description}</textarea>
                                 </div>
                             </div>
 
@@ -92,7 +92,7 @@
                                     </label>
 
                                     <input name="product-amount" type="number" class="form-control"
-                                           id="amount" value="${product.amount}">
+                                           id="amount" value="${product.amount}" required>
                                 </div>
                             </div>
 
@@ -103,7 +103,7 @@
                                     </label>
 
                                     <select name="product-category" id="category"
-                                            class="form-control">
+                                            class="form-control" required>
                                         <c:forEach items="${category_list}" var="o">
                                             <option value="${o.id}">${o.name}</option>
                                         </c:forEach>
