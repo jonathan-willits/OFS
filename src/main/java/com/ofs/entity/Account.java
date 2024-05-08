@@ -11,6 +11,11 @@ public class Account {
     private String lastName;
     private String email;
     private String phone;
+    private long creditCard;
+    private int month;
+    private int year;
+    private int cvv;
+    private int zipCode;
 
     private byte[] image;
     private String base64Image;
@@ -19,7 +24,7 @@ public class Account {
 
     }
 
-    public Account(int id, String username, String password, int isSeller, int isAdmin, String address, String firstName, String lastName, String email, String phone, String base64Image) {
+    public Account(int id, String username, String password, int isSeller, int isAdmin, String address, String firstName, String lastName, String email, String phone, String base64Image, long creditCard, int month, int year, int cvv, int zipCode) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -31,6 +36,11 @@ public class Account {
         this.email = email;
         this.phone = phone;
         this.base64Image = base64Image;
+        this.creditCard = creditCard;
+        this.month = month;
+        this.year = year;
+        this.cvv = cvv;
+        this.zipCode = zipCode;
     }
 
     public int getId() {
@@ -128,4 +138,44 @@ public class Account {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-}
+
+    public long getCreditCard() {
+        return this.creditCard;
+    }
+
+    public void setCreditCard(long creditCard) {
+        this.creditCard = creditCard;
+    }
+
+    public int getMonth() {
+        return this.month;
+    }
+
+    public void setMonth(int month) {
+        this.month = month;
+    }
+
+    public int getYear() {
+        return this.year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public int getCvv() {
+        return this.cvv;
+    }
+
+    public void setCvv(int cvv) {
+        this.cvv = cvv;
+    }
+
+    public int getZipCode() {
+        return this.zipCode;
+    }
+
+    public void setZipCode(int zipCode) {
+        this.zipCode = zipCode;
+    }
+ }

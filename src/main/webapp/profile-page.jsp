@@ -26,7 +26,7 @@
                 <div class="col-md-4">
                     <div class="row">
                         <div class="col-md-12">
-                            <h2 class="h3 mb-3 text-black">Profile image</h2>
+                            <h2 class="h3 mb-3 text-black">Profile Image</h2>
 
                             <div class="p-3 border d-flex justify-content-center">
                                 <label class="m-0" for="imgInp">
@@ -61,6 +61,18 @@
                     <h2 class="h3 mb-3 text-black">Profile Information</h2>
 
                     <div class="p-3 p-lg-5 border">
+
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <label for="username" class="text-black">
+                                    Username <span class="text-danger">*</span>
+                                </label>
+
+                                <input type="text" class="form-control" id="username" name="username"
+                                       value="${account.username}" readonly>
+                            </div>
+                        </div>
+
                         <div class="form-group row">
                             <div class="col-md-6">
                                 <label for="first-name" class="text-black">
@@ -68,7 +80,7 @@
                                 </label>
 
                                 <input type="text" class="form-control" id="first-name" name="first-name"
-                                       value="${account.firstName}">
+                                       value="${account.firstName}" maxlength="32" pattern="[A-Za-z]{1,32}">
                             </div>
 
                             <div class="col-md-6">
@@ -77,7 +89,7 @@
                                 </label>
 
                                 <input type="text" class="form-control" id="last-name" name="last-name"
-                                       value="${account.lastName}">
+                                       value="${account.lastName}" maxlength="32" pattern="[A-Za-z]{1,32}">
                             </div>
                         </div>
 
@@ -107,7 +119,53 @@
                                 </label>
 
                                 <input type="text" class="form-control" id="phone" name="phone"
-                                       value="${account.phone}">
+                                       value="${account.phone}" maxlength="10" pattern="[0-9]{1-10}">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <label for="credit_card" class="text-black">
+                                    Credit Card Number <span class="text-danger">*</span>
+                                </label>
+
+                                <input type="text" class="form-control" id="credit_card" name="credit_card"
+                                       value="${account.creditCard}" minlength="16" maxlength="16" pattern="[0-9]{1-10}">
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-5">
+                            <div class="col-md-2">
+                                <label for="month" class="text-black">
+                                    Month <span class="text-danger">*</span>
+                                </label>
+
+                                <input type="text" class="form-control" id="month" name="month"
+                                       value="${account.month}">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="year" class="text-black">
+                                    Year <span class="text-danger">*</span>
+                                </label>
+
+                                <input type="text" class="form-control" id="year" name="year"
+                                       value="${account.year}">
+                            </div>
+                            <div class="col-md-2">
+                                <label for="cvv" class="text-black">
+                                    CVV <span class="text-danger">*</span>
+                                </label>
+
+                                <input type="text" class="form-control" id="cvv" name="cvv"
+                                       value="${account.cvv}" minlength="3" maxlength="3" pattern=[0-9]{1-10}">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="zip_code" class="text-black">
+                                    Zip Code <span class="text-danger">*</span>
+                                </label>
+
+                                <input type="text" class="form-control" id="zip_code" name="cvv"
+                                       value="${account.zipCode}" minlength="5" maxlength="5" pattern=[0-9]{1-10}">
                             </div>
                         </div>
 

@@ -36,6 +36,11 @@ public class CheckoutControl extends HttpServlet {
         String address = request.getParameter("address");
         String email = request.getParameter("email");
         String phone = request.getParameter("phone");
+        String creditCard = request.getParameter("credit_card");
+        String month = request.getParameter("month");
+        String year = request.getParameter("year");
+        String cvv = request.getParameter("cvv");
+        String zipCode = request.getParameter("zip_code");
 
         if (session.getAttribute("account") == null) {
             response.sendRedirect("login.jsp");
@@ -47,7 +52,7 @@ public class CheckoutControl extends HttpServlet {
 
             // Insert information to account.
             int accountId = account.getId();
-            accountDao.updateProfileInformation(accountId, firstName, lastName, address, email, phone);
+            accountDao.updateProfileInformation(accountId, firstName, lastName, address, email, phone, Long.parseLong(creditCard), Integer.parseInt(month), Integer.parseInt(year), Integer.parseInt(cvv), Integer.parseInt(zipCode));
             // Insert order to database.
             orderDao.createOrder(account.getId(), totalPrice, order.getCartProducts());
             session.removeAttribute("order");

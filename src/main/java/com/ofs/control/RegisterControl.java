@@ -37,10 +37,46 @@ public class RegisterControl extends HttpServlet {
         InputStream inputStream = part.getInputStream();
 
         // Check password and repeatPassword are the same.
-        if (!password.equals(repeatPassword)) {
+        if(username.equals("") && password.equals("")) {
             String alert = "<div class=\"alert alert-danger wrap-input100\">\n" +
                     "                        <p style=\"font-family: Ubuntu-Bold; font-size: 18px; margin: 0.25em 0; text-align: center\">\n" +
-                    "                            Incorrect password!\n" +
+                    "                            Please enter username and password\n" +
+                    "                        </p>\n" +
+                    "                    </div>";
+            request.setAttribute("alert", alert);
+            request.getRequestDispatcher("register.jsp").forward(request, response);
+        }
+        else if(username.equals("")) {
+            String alert = "<div class=\"alert alert-danger wrap-input100\">\n" +
+                    "                        <p style=\"font-family: Ubuntu-Bold; font-size: 18px; margin: 0.25em 0; text-align: center\">\n" +
+                    "                            Please enter username\n" +
+                    "                        </p>\n" +
+                    "                    </div>";
+            request.setAttribute("alert", alert);
+            request.getRequestDispatcher("register.jsp").forward(request, response);
+        }
+        else if(password.equals("")) {
+            String alert = "<div class=\"alert alert-danger wrap-input100\">\n" +
+                    "                        <p style=\"font-family: Ubuntu-Bold; font-size: 18px; margin: 0.25em 0; text-align: center\">\n" +
+                    "                            Please enter password\n" +
+                    "                        </p>\n" +
+                    "                    </div>";
+            request.setAttribute("alert", alert);
+            request.getRequestDispatcher("register.jsp").forward(request, response);
+        }
+        else if(repeatPassword.equals("")) {
+            String alert = "<div class=\"alert alert-danger wrap-input100\">\n" +
+                    "                        <p style=\"font-family: Ubuntu-Bold; font-size: 18px; margin: 0.25em 0; text-align: center\">\n" +
+                    "                            Please validate password\n" +
+                    "                        </p>\n" +
+                    "                    </div>";
+            request.setAttribute("alert", alert);
+            request.getRequestDispatcher("register.jsp").forward(request, response);
+        }
+        else if (!password.equals(repeatPassword)) {
+            String alert = "<div class=\"alert alert-danger wrap-input100\">\n" +
+                    "                        <p style=\"font-family: Ubuntu-Bold; font-size: 18px; margin: 0.25em 0; text-align: center\">\n" +
+                    "                            Incorrect password\n" +
                     "                        </p>\n" +
                     "                    </div>";
             request.setAttribute("alert", alert);
