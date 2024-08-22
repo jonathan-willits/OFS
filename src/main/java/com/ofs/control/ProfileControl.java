@@ -48,6 +48,6 @@ public class ProfileControl extends HttpServlet {
         System.out.println(accountId + " " + firstName + " " + lastName + " " + address + " " + email + " " + phone + " " + creditCard + " " + month + " " + year + " " + cvv + " " + zipCode);
 
         accountDao.editProfileInformation(accountId, firstName, lastName, address, email, phone, inputStream, Long.parseLong(creditCard), Integer.parseInt(month), Integer.parseInt(year), Integer.parseInt(cvv), Integer.parseInt(zipCode));
-        response.sendRedirect("login");
+        response.sendRedirect("profile-page.jsp");
     }
 }

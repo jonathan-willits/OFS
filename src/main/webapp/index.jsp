@@ -17,7 +17,7 @@
 <%--                    <h1 class="mb-2">Healthy Organic Food From Your Local Market</h1>--%>
 
 <%--                    <div class="intro-text text-center text-md-left">--%>
-<%--                        <p class="mb-4"> Free Pickup or Free Delivery Available for Orders 20+ LBS</p>--%>
+<%--                        <p class="mb-4"> Free Pickup or Free Delivery Available for Orders under 20 LBS</p>--%>
 <%--                        <p>--%>
 <%--                            <a href="shop" class="btn btn-sm btn-primary">Shop Now</a>--%>
 <%--                        </p>--%>
@@ -36,7 +36,7 @@
                     </div>
 
                     <div class="text">
-                        <h2 class="text-uppercase">Free Shipping with Orders 20+ LBS</h2>
+                        <h2 class="text-uppercase">Free Shipping with Orders under 20 LBS</h2>
                         <p>Organic groceries delivered straight to your door the next business day if you order before closing hours</p>
                     </div>
                 </div>
